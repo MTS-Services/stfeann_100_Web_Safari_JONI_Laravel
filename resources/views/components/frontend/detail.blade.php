@@ -1,128 +1,131 @@
-<section class="bg-white  px-4 py-20 sm:py-24 md:py-28 lg:py-32 xl:py-40">
-  <div class="container mx-auto max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-    <!-- Image Slider -->
-    <div class="px-0 sm:px-6 md:px-8 lg:px-10 xl:px-13">
-      <div class="w-full aspect-square overflow-hidden rounded-lg">
-        <img id="mainImage" src="{{ asset('assets/frontend/imagens/n5.png') }}" alt="Main Product" class="w-full h-auto object-cover">
-      </div>
-     <div class="relative">
-  <!-- Left Navigation Button -->
-  <button onclick="scrollThumbnails(-1)"
-    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-    &#8592;
-  </button>
 
-  <!-- Thumbnails Wrapper -->
- <div class="relative">
-  <!-- Left Navigation Button -->
-  <button onclick="scrollThumbnails(-1)"
-    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-    &#8592;
-  </button>
 
-  <!-- Thumbnails Scroll Container -->
-  <div id="thumbnailScroll"
-    class="flex gap-2 mt-4 overflow-x-auto px-6 scroll-smooth no-scrollbar">
-    
-    <img src="{{ asset('assets/frontend/imagens/n6.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-
-    <img src="{{ asset('assets/frontend/imagens/n7.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-
-    <img src="{{ asset('assets/frontend/imagens/r1.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-
-    <img src="{{ asset('assets/frontend/imagens/r2.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-
-    <img src="{{ asset('assets/frontend/imagens/r1.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-
-    <img src="{{ asset('assets/frontend/imagens/r4.png') }}"
-      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
-      onclick="document.getElementById('mainImage').src = this.src">
-  </div>
-
-  <!-- Right Navigation Button -->
-  <button onclick="scrollThumbnails(1)"
-    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-    &#8594;
-  </button>
+<section class="bg-white mb-8" id="development">
+    <div class="container mx-auto max-w-8xl">
+        <div class="relative px-4 mb-8">
+            <div class="text-center px-2 sm:px-0">
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 sm:mb-4 text-gray-900">
+                    Produtos Recomendados
+                </h1>
+                <p class="text-base sm:text-lg text-gray-600">
+                    Novos produtos para o seu guarda-roupas
+                </p>
+            </div>
+        </div>
+  <!-- Swiper Slider -->
+  <div class="swiper mySwiper w-full h-full">
+    <div class="swiper-wrapper ">
+ 
+      <!-- Slide 1 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r6.png') }}" alt="24/7 Support" class="w-full h-full">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
 </div>
 
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r1.png') }}" alt="Ethereum" class="w-full h-full">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
 </div>
-
-
-    </div>
-
-    <!-- Product Info -->
-    <div class="px-1 sm:px-3 md:px-6">
-      <div class="mb-2 text-sm sm:text-base">
-        <p>Home / <span class="">T-shirt Valgrit</span></p>
       </div>
 
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">T-shirt Valgrit Azul</h1>
-
-      <div class="flex items-center mb-4">
-        <div class="flex text-yellow-400 text-xl sm:text-2xl mr-2">★★★★☆</div>
-        <span class="text-xs sm:text-sm text-gray-500">(4.5 Rating)</span>
+      <!-- Slide 3 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r2.png') }}" alt="Solana" class="w-full h-full">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
-      <!-- Price -->
-      <div class="text-xl sm:text-2xl font-bold text-black mb-6">
-        <span class="text-gray-500">Price:</span> 39,99€
+      <!-- Slide 4 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r3.png') }}" alt="Dogecoin" class="w-full h-full">
+         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
-      <!-- Size -->
-   <div class="flex mb-4 gap-3"> 
-    <div class="mb-4">
-      <p class="font-semibold mb-2">Size:</p>
-      <select class="border rounded px-7 py-2 w-full sm:w-50">
-        <option value="">Tamanho:</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-        <option value="XXL">XXL</option>
-      </select>
-    </div>
+      <!-- Slide 5 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r4.png') }}" alt="Bitcoin" class="w-full h-full">
+         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
+      </div>
 
-    <!-- Quantity -->
-    <div class="mb-4">
-      <p class="font-semibold mb-2">Quantity:</p>
-      <input type="number" value="1" min="1" class="w-full sm:w-20 border rounded px-2 py-2">
-    </div>
-    </div>
-
-      <!-- Add to Cart -->
-      <button class="text-white bg-red-500 px-6 py-3 rounded hover:bg-text-primary hover:text-white border transition font-medium relative w-full sm:w-auto">
-        <a class="absolute inset-0" href="#"></a>
-        Adicionar ao Carrinho
-      </button>
-
-      <!-- Description -->
-      <div class="mt-6">
-        <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl mb-2">Descrição</h1>
-        <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
-          Eleve seu treino com a Camiseta Performance VALGRIT. Feita com tecido respirável e de secagem rápida, oferece conforto e liberdade de movimento incomparáveis. Design moderno e caimento perfeito para você superar seus limites.
-        </p>
+      <!-- Slide 6 -->
+      <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
+        <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
+        <img src="{{ asset('assets/frontend/imagens/r5.png') }}" alt="Bitcoin" class="w-full h-full">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
     </div>
+
+    <!-- Pagination (optional) -->
+    <div class="swiper-pagination mt-4"></div>
   </div>
+
+
+<!-- Prev Arrow -->
+
+  <!-- Pagination -->
+<div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
+
+
+
+</div>
+</div>
+</div>
 </section>
 
-          <script>
-  function scrollThumbnails(direction) {
-    const container = document.getElementById('thumbnailScroll');
-    container.scrollBy({
-      left: direction * 150,
-      behavior: 'smooth'
-    });
-  }
+
+
+<!-- Swiper JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-prev",
+      prevEl: ".swiper-button-next",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+      },
+      640: {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+      },
+      1024: {
+        slidesPerView: 5,
+        slidesPerGroup: 1,
+      },
+    },
+  });
 </script>
