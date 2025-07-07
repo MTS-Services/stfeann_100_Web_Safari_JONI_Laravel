@@ -1,16 +1,4 @@
 <x-frontend::layout>
-    @push('cs')
-        <style>
-  /* Custom scrollbar hide utility */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-</style>
-    @endpush
     <section class="bg-white px-4 py-20 sm:pt-24 md:pt-28 lg:pt-40   mt-4 lg:mt-8 xl:mt-16">
         <div class="container mx-auto max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
 
@@ -23,20 +11,25 @@
 
                 <div class="relative">
                     <!-- Left Navigation Button -->
-                    <!-- Thumbnails Scroll Container (No Loop, No Buttons) -->
-                     <button onclick="scrollThumbnails(-1)"
+                    <button onclick="scrollThumbnails(-1)"
                         class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
                         &#8592;
                     </button>
-<!-- Thumbnails Scroll Container (No Loop, No Scrollbar) -->
 
-          <x-frontend.detail-slider :product="$product" />
+                    <!-- Thumbnails Scroll Container -->
+                    <div id="thumbnailScroll" class="flex gap-2 mt-4 overflow-x-auto px-6 scroll-smooth no-scrollbar">
+                        @foreach ($product->nonPrimayImages as $thumbImage)
+                            <img src="{{ $thumbImage->modified_image }}"
+                                class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-36 object-cover cursor-pointer  {{ in_array($thumbImage->modified_image, ['r1.png', 'r2.png', 'r4.png']) ? 'bg-gray-50' : '' }} flex-shrink-0"
+                                onclick="document.getElementById('mainImage').src = this.src">
+                        @endforeach
+                    </div>
 
-     <button onclick="scrollThumbnails(1)"
+                    <!-- Right Navigation Button -->
+                    <button onclick="scrollThumbnails(1)"
                         class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
                         &#8594;
                     </button>
-
                 </div>
             </div>
 
@@ -122,7 +115,7 @@
             </div>
 
             <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full" id="mySwiper">
+            <div class="swiper mySwiper w-full h-full">
                 <div class="swiper-wrapper ">
 
                     @foreach ($related_products as $product)
