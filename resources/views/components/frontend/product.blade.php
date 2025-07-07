@@ -29,9 +29,9 @@
             <span class="text-gray-600 text-xs ml-2">(4.0)</span>
         </div> --}}
         <div class="flex justify-between items-center mt-3">
-            <h4 class="text-2xl font-extrabold text-black">{{ $product->price }}€</h4>
+            <h4 class="text-ms text-xl font-extrabold text-black">{{ $product->price }}€</h4>
             <button
-                class="bg-text-primary text-white rounded-lg px-4 py-2 text-base font-semibold hover:bg-text-primary/80 duration-300 ease-in-out flex items-center gap-3 shadow relative">
+                class=" bg-text-primary text-white rounded-lg px-2 py-2 text-base font-semibold hover:bg-text-primary/80 duration-300 ease-in-out flex items-center gap-3 shadow relative">
                 <a class="absolute inset-0" href="Javascript:void(0);"></a>
                 <!-- Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
