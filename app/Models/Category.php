@@ -78,4 +78,5 @@ class Category extends BaseModel
     {
         return $this->hasMany(Product::class);
     }
+ 
 }

@@ -55,7 +55,7 @@ class ProductController extends Controller
                 ->rawColumns(['status', 'category_id', 'is_featured', 'created_by', 'created_at', 'action'])
                 ->make(true);
         }
-      
+
         return view('backend.admin.product-management.product.index');
     }
     protected function menuItems($model): array
@@ -99,7 +99,7 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-          $data['products'] = $this->productService->getProducts();
+        $data['products'] = $this->productService->getProducts();
         $data['categories'] = $this->categoryService->getCategories()->select(['id', 'name'])->get();
         return view('backend.admin.product-management.product.create', $data);
     }

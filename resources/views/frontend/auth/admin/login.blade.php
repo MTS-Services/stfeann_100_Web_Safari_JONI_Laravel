@@ -18,7 +18,7 @@
         <!-- Email Address -->
         <div>
             <x-input-label class="text-white" for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Email Address" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -29,7 +29,7 @@
             <x-text-input id="password" class="block mt-1 w-full"
                 type="password"
                 name="password"
-                required autocomplete="current-password" />
+                required autocomplete="current-password" placeholder="Password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -44,12 +44,12 @@
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('admin.password.request'))
-            <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
+            <a class="underline text-sm text-white  rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
             @endif
 
-            <x-primary-button class="ms-3 bg-red-700!">
+            <x-primary-button class="ms-3 bg-red-600!">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
