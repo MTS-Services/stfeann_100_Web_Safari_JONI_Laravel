@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
       Route::delete('/permanent-delete/{admin}', 'permanentDelete')->name('permanent-delete');
     });
   });
+
+  // User Management
   Route::group(['as' => 'um.', 'prefix' => 'user-management'], function () {
     Route::resource('user', UserController::class);
     Route::controller(UserController::class)->name('user.')->prefix('user')->group(function () {
@@ -33,7 +35,9 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
     });
   });
 
+  // Product Management
   Route::group(['as'=>'pm.', 'prefix' => 'product-management'], function () {
+    // Categories
     Route::resource('category', CategoryController::class);
     Route::controller(CategoryController::class)->name('category.')->prefix('category')->group(function () {
       Route::post('/show/{category}', 'show')->name('show');
@@ -43,7 +47,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
       Route::delete('/permanent-delete/{category}', 'permanentDelete')->name('permanent-delete');
     });
 
-
+    // Products
     Route::resource('product', ProductController::class);
     Route::controller(ProductController::class)->name('product.')->prefix('product')->group(function () {
       Route::post('/show/{product}', 'show')->name('show');

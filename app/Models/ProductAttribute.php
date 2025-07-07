@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class ProductAttribute extends Model
+class ProductAttribute extends BaseModel
 {
     protected $fillable = [
         'sort_order',

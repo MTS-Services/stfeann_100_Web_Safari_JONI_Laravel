@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}" class="bg-[#1c1c1c]   py-6 px-6 lg:py-20 lg:px-20 rounded-sm shadow-sm">
+    <form method="POST" action="{{ route('login') }}" class="bg-black p-10 rounded-md shadow-sm">
         @csrf
         {{ __('User Login') }}
 
@@ -16,20 +16,20 @@
         </div>
 
         <!-- Email Address -->
-        <div class="mb-8">
+        <div class="mb-4">
             <x-input-label class="text-white " for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 lg:w-full md:w-full w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2 " />
+            <x-text-input id="email" class="block mt-1 lg:w-full md:w-full w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Email Address" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
-                
+
         <!-- Password -->
-        <div class="mt-8">
+        <div class="mt-4">
             <x-input-label class="text-white" for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 lg:w-full md:w-full w-full"
                 type="password"
                 name="password"
-                required autocomplete="current-password" />
+                required autocomplete="current-password" placeholder="Password " />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -44,7 +44,7 @@
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-            <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+            <a class="underline text-sm text-white  rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
             @endif

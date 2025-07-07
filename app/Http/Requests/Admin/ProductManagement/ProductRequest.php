@@ -28,7 +28,7 @@ class ProductRequest extends FormRequest
             'description' => 'nullable|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp,svg|max:5120',
             'images' => 'nullable|array',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg|max:2048',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg',
             'attribute_values' => 'nullable|array',
             'attribute_values.*' => 'nullable|string',
         ] + ($this->isMethod('POST') ? $this->store() : $this->update());
