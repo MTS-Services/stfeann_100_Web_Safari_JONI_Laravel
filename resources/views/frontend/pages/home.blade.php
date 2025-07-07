@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="px-4 sm:px-6 lg:px-0">
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
                         <!-- Example Card (repeat this structure) -->
                         @foreach ($products as $product)
