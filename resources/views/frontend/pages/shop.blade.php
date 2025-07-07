@@ -1,12 +1,12 @@
 <x-frontend::layout>
     <section class="relative w-full">
         <img src="{{ asset('assets/frontend/imagens/shop.png') }}" alt="Fitness BG"
-            class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] object-cover" />
+            class="w-full h-[50vh] sm:h-[60vh] md:h-[85vh] object-cover" />
 
         <div class="absolute inset-0 bg-opacity-50 flex items-center justify-center sm:justify-end px-2 sm:px-8">
-            <div class="text-center sm:text-right max-w-[90%] mt-20 sm:mt-0">
+            <div class="text-center max-w-[90%] mt-20 sm:mt-0">
                 <h1
-                    class="text-white text-[30px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-extrabold leading-none uppercase tracking-tight
+                    class="text-white text-[30px] sm:text-[60px] md:text-[80px] lg:text-[80px] font-extrabold leading-none uppercase tracking-tight
              mb-5 sm:mb-0">
                     <span class="block sm:mr-20 -mb-4">Treina</span>
                     <span class="block sm:mr-20 mt-4">Mais</span>
