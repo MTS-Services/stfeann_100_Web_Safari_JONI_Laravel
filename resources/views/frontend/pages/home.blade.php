@@ -11,7 +11,7 @@
             <h1 class="text-4xl md:text-5xl font-bold ml-6 mb-1/2  text-white">VALGRIT</h1>
             <p class="text-xl md:text-2xl font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
             <a href="#saiba-mais"
-                class="inline-block  hover:bg-red-700 hover:text-white text-text-primary font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
+                class="inline-block  hover:text-text-primary bg-text-primary text-text-white font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
                 SAIBA MAIS
             </a>
         </div>
@@ -70,7 +70,7 @@
         </div>
     </section>
     <section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1500px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
+        <div class="w-full max-w-[1820px] flex flex-col md:flex-row items-center  rounded-lg overflow-hidden">
             <!-- Image Side -->
             <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
                 <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="Beautiful Design"
