@@ -11,8 +11,8 @@ class HomeController extends Controller
 {
   public function home()
   {
-    $data['products'] = Product::with(['primaryImage', 'nonPrimayImages', 'productAttributes'])->Featured()->latest()->take(3)->get();
-    $data['categories']=Category::get();
+    $data['products'] = Product::with(['primaryImage', 'nonPrimayImages', 'productAttributes'])->featured()->latest()->take(3)->get();
+    $data['categories']=Category::active()->get();
     return view('frontend.pages.home', $data);
   }
 
