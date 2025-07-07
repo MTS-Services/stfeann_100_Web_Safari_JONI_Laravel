@@ -26,23 +26,24 @@
                                 <span class="text-red-500">*</span>
                             </p>
                             <label class="input flex items-center gap-2">
-                                <input type="text" placeholder="Name" id="name" value="{{ old('name') }}" name="name"
-                                    class="flex-1" />
+                                <input type="text" placeholder="Name" id="name" value="{{ old('name') }}"
+                                    name="name" class="flex-1" />
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
-                         <!-- Slug -->
+                        <!-- Slug -->
                         <div class="space-y-2">
                             <p class="label">{{ __('slug') }}
                                 <span class="text-red-500">*</span>
                             </p>
                             <label class="input flex items-center gap-2">
 
-                                <input type="text" name="slug" id="slug" value="{{ old('slug') }}" class="flex-1" />
+                                <input type="text" name="slug" id="slug" value="{{ old('slug') }}"
+                                    class="flex-1" />
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('slug')" />
                         </div>
-                            {{-- Category --}}
+                        {{-- Category --}}
                         <div class="space-y-2">
                             <p class="label">{{ __('Category') }}
                                 <span class="text-red-500">*</span>
@@ -64,27 +65,58 @@
                             </p>
                             <label class="input flex items-center gap-2">
 
-                                <input type="number" name="price"  value="{{ old('price') }}" class="flex-1" />
+                                <input type="number" name="price" value="{{ old('price') }}" class="flex-1" />
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('price')" />
                         </div>
-                        <!-- Price -->
+                        <!-- Stock -->
                         <div class="space-y-2">
                             <p class="label">{{ __('Stock No') }}
                                 <span class="text-red-500">*</span>
                             </p>
                             <label class="input flex items-center gap-2">
 
-                                <input type="text" name="stock_no"  value="{{ old('stock_no') }}" class="flex-1" />
+                                <input type="text" name="stock_no" value="{{ old('stock_no') }}" class="flex-1" />
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('stock_no')" />
                         </div>
+                        {{-- Size --}}
+                        <div class="space-y-2">
+                            <p class="label">
+                                {{ __('Available Size') }} <span class="text-red-500">*</span>
+                            </p>
+                            <select name="attribute_values[]" class="select select2 " multiple>
+                                {{-- <option value="" hidden disabled>Select Size</option> --}}
+                                @foreach (App\Models\ProductAttribute::sizeList() as $key => $size)
+                                    <option value="{{ $key }}"
+                                        {{ collect(old('attribute_values'))->contains($key) ? 'selected' : '' }}>
+                                        {{ $size }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            <x-input-error class="mt-2" :messages="$errors->get('attribute_values')" />
+                        </div>
+
                         {{-- Description --}}
                         <div class="space-y-2 sm:col-span-2">
                             <p class="label">{{ __('Description') }}</p>
                             <textarea name="description" id="description" cols="" rows="10" class="textarea"></textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('description')" />
                         </div>
+                    </div>
+                    {{-- image --}}
+                    <div class="space-y-2 sm:col-span-2 mt-3">
+                        <p class="label">{{ __('Primary Image') }}</p>
+                        <input type="file" name="image" class="filepond" id="image"
+                            accept="image/jpeg, image/png, image/jpg, image/webp, image/svg">
+                        <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                    </div>{{-- image --}}
+                    <div class="space-y-2 sm:col-span-2 mt-3">
+                        <p class="label">{{ __('Image') }}</p>
+                        <input type="file" name="images[]"
+                            accept="image/jpeg, image/png, image/jpg, image/webp, image/svg" class="filepond" multiple
+                            id="images">
+                        <x-input-error class="mt-2" :messages="$errors->get('images')" />
                     </div>
                     <div class="flex justify-end mt-5">
                         <x-admin.primary-button>{{ __('Create') }}</x-admin.primary-button>
@@ -98,5 +130,12 @@
     </section>
     @push('js')
         <script src="{{ asset('assets/js/ckEditor5.js') }}"></script>
+        <script src="{{ asset('assets/js/filepond.js') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                file_upload(["#image"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"]);
+                file_upload(["#images"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"]);
+            });
+        </script>
     @endpush
 </x-admin::layout>

@@ -12,7 +12,7 @@
                             data-lucide="trash-2" class="w-4 h-4"></i>
                     </x-admin.primary-link>
                     <x-admin.primary-link href="{{ route('pm.product.create') }}">{{ __('Add') }} <i
-                            data-lucide="user-round-plus" class="w-4 h-4"></i>
+                            data-lucide="plus" class="w-4 h-4"></i>
                     </x-admin.primary-link>
                 </div>
             </div>
@@ -87,6 +87,17 @@
                             key: 'price',
                         },
                         {
+                            label: '{{ __('Image') }}',
+                            key: 'image',
+                            type: 'image',
+                        },
+                        {
+                            label: '{{ __('Available Sizes') }}',
+                            key: 'productAttributes',
+                            loop: true,
+                            loopKey: 'attribute_value',
+                        },
+                        {
                             label: '{{ __('Category') }}',
                             key: 'category_name',
                         },
@@ -94,13 +105,13 @@
                             label: '{{ __('Status') }}',
                             key: 'status_label',
                             label_color: 'status_color',
-                            type: 'status',
+                            type: 'badge',
                         },
                         {
                             label: '{{ __('Featured') }}',
                             key: 'featured_label',
                             label_color: 'featured_color',
-                            type: 'is_featured',
+                            type: 'badge',
                         },
                         {
                             label: '{{ __('Decsription') }}',

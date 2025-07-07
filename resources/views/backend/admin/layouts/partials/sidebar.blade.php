@@ -50,7 +50,7 @@
                         'active' => 'admin',
                     ],
                 ]" />
-            <x-admin.navlink type="dropdown" icon="users" name="User Management" :page_slug="$active"
+            {{-- <x-admin.navlink type="dropdown" icon="users" name="User Management" :page_slug="$active"
                 :items="[
                     [
                         'name' => 'User',
@@ -58,19 +58,19 @@
                         'icon' => 'user',
                         'active' => 'user',
                     ],
-                ]" />
-            <x-admin.navlink type="dropdown" icon="users" name="Product Management" :page_slug="$active"
+                ]" /> --}}
+            <x-admin.navlink type="dropdown" icon="box" name="Product Management" :page_slug="$active"
                 :items="[
                     [
                         'name' => 'Category',
                         'route' => route('pm.category.index'),
-                        'icon' => '',
+                        'icon' => 'settings',
                         'active' => 'category',
                     ],
                     [
                         'name' => 'Product',
                         'route' => route('pm.product.index'),
-                        'icon' => '',
+                        'icon' => 'package-2',
                         'active' => 'product',
                     ],
                 ]" />
