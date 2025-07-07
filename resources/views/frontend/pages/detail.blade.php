@@ -76,7 +76,7 @@
                 <!-- Add to Cart -->
                 <button
                     class="text-white bg-red-500 px-6 py-3 rounded hover:bg-text-primary hover:text-white border transition font-medium relative w-full sm:w-auto">
-                    <a class="absolute inset-0" href="#"></a>
+                    <a class="absolute inset-0" href="javascript:void(0)"></a>
                     Adicionar ao Carrinho
                 </button>
 

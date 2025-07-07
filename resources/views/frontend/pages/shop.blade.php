@@ -76,6 +76,19 @@
         </div>
     </div>
 
+<div class="flex space-x-3 mt-10 mb-10 justify-center">
+  <!-- Prev Button -->
+  <button id="prevBtn" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition"> &larr; </button>
+
+  <!-- Page 1 -->
+  <button class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">1 </button>
+
+  <!-- Page 2 -->
+  <button class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">  2 </button>
+
+  <!-- Next Button -->
+  <button id="nextBtn" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">  &rarr; </button>
+</div>
 
 
 </x-frontend::layout>

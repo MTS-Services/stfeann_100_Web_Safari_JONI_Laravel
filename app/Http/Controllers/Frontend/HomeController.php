@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductAttribute;
 
@@ -11,6 +12,7 @@ class HomeController extends Controller
   public function home()
   {
     $data['products'] = Product::with(['primaryImage', 'nonPrimayImages', 'productAttributes'])->Featured()->latest()->take(3)->get();
+    $data['categories']=Category::get();
     return view('frontend.pages.home', $data);
   }
 
@@ -36,4 +38,7 @@ class HomeController extends Controller
   {
     return view('frontend.pages.product',);
   }
+ 
+
+
 }
