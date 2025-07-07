@@ -4,12 +4,11 @@
 
     <section class="relative ">
         <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="About Us Background"
-            class="w-full h-[655px] object-cover">
+            class="w-full h-[85vh] object-cover">
         <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div
-            class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-bold ml-6 mb-1/2  text-white">VALGRIT</h1>
-            <p class="text-xl md:text-2xl font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
+        <div class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 !text-center transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10  md:text-left">
+            <h1 class="text-4xl md:text-8xl font-bold  mb-1/2  text-white">VALGRIT</h1>
+            <p class="text-xl md:text-4xl  font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
             <a href="#saiba-mais"
                 class="inline-block  hover:bg-red-700 hover:text-white text-white bg-text-primary font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
                 SAIBA MAIS
@@ -23,24 +22,29 @@
     <div class="swiper mySwiper w-full h-full " id="mySwiper">
         <div class="swiper-wrapper">
 
-           <x-frontend.slide :categories="$categories"/>
+                    <x-frontend.slide :categories="$categories" />
 
-        </div>
-        <!-- Pagination (optional) -->
-        <div class="swiper-pagination mt-4"></div>
-    </div>
+                </div>
+                <!-- Pagination (optional) -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
 
-    <!-- Prev Arrow -->
+            <!-- Prev Arrow -->
 
-    <!-- Pagination -->
-    <div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
 
-    <!-- Navigation buttons -->
-    <!-- Show navigation on all screens, but position differently for mobile -->
-    <div
-        class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
-        <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-    </div>
+            <!-- Navigation buttons -->
+            <!-- Show navigation on all screens, but position differently for mobile -->
+            <div
+                class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
+                <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+            </div>
+
+            <div
+                class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
+                <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+            </div>
 
     <div
         class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
@@ -50,7 +54,7 @@
     </section>
     <section>
         <div class="section-container flex justify-center items-center min-h-[693px] bg-white py-16">
-            <div class="w-full max-w-[1000px]">
+            <div class="w-full max-w-[1200px]">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">Destaques</h2>
                     <p class="text-gray-500 mb-8 text-lg">Descubra nossa coleção premium de roupas fitness</p>
@@ -110,11 +114,11 @@
     </section>
 
 </x-frontend::layout>
- <!-- Swiper JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Swiper JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Swiper Init -->
-  <script>
+<!-- Swiper Init -->
+<script>
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: 20,
@@ -123,8 +127,8 @@
             disableOnInteraction: false,
         },
         navigation: {
-            nextEl: ".swiper-button-next", 
-            prevEl: ".swiper-button-prev", 
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
         breakpoints: {
             0: {
@@ -142,4 +146,3 @@
         },
     });
 </script>
-

@@ -1,7 +1,7 @@
 <section class="bg-text-secondary">
     <nav class="bg-white shadow-md fixed top-0 w-full z-50">
         <div class="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-10">
 
                 <div class="md:hidden">
                     <button id="mobile-menu-button"

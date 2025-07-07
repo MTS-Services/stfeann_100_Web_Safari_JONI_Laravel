@@ -44,7 +44,7 @@
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('admin.password.request'))
-            <a class="underline text-sm text-white  rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
+            <a class="underline text-sm text-white hover:text-gray-400 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
             @endif
