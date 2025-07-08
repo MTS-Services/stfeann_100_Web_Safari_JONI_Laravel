@@ -33,17 +33,18 @@
                         <span
                             class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                     </a>
-                    <a href="{{ route('f.products') }}"
-                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.products') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
-                        Produtos
-                        <span
-                            class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.products') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
-                    </a>
+                   
                     <a href="{{ route('f.shop') }}"
                         class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
                         Loja
                         <span
                             class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
+                    </a>
+                     <a href="{{ route('f.about') }}"
+                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.about') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                        Sobre nós
+                        <span
+                            class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.about') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                     </a>
                 </div>
 
@@ -109,10 +110,11 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="{{ route('f.home') }}"
                     class="nav-link block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('f.home') ? 'text-text-primary bg-gray-50' : 'text-text-black hover:text-text-primary hover:underline duration-300 hover:bg-gray-50' }}">Início</a>
-                <a href="{{ route('f.products') }}"
-                    class="nav-link block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('f.products') ? 'text-text-primary bg-gray-50' : 'text-text-black hover:text-text-primary hover:underline duration-300 hover:bg-gray-50' }}">Produtos</a>
+                
                 <a href="{{ route('f.shop') }}"
                     class="nav-link block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('f.shop') ? 'text-text-primary bg-gray-50' : 'text-text-black hover:text-text-primary hover:underline duration-300 hover:bg-gray-50' }}">Loja</a>
+                    <a href="{{ route('f.about') }}"
+                    class="nav-link block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('f.about') ? 'text-text-primary bg-gray-50' : 'text-text-black hover:text-text-primary hover:underline duration-300 hover:bg-gray-50' }}">Sobre nós</a>
             </div>
         </div>
     </nav>

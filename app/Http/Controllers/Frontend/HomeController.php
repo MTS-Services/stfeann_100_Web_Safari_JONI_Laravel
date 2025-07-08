@@ -28,15 +28,16 @@ class HomeController extends Controller
     return view('frontend.pages.detail', $data);
   }
 
-  public function shop()
-  {
-    $prods = Product::with(['primaryImage',])->latest()->paginate(12)->all();
-    return view('frontend.pages.shop', compact('prods'));
-  }
+   public function shop()
+    {
+        
+        $prods = Product::with(['primaryImage'])->latest()->paginate(8);
+        return view('frontend.pages.shop', compact('prods'));
+    }
 
-  public function product()
+  public function about()
   {
-    return view('frontend.pages.product',);
+    return view('frontend.pages.about',);
   }
  
 

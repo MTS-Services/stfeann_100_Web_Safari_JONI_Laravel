@@ -10,17 +10,17 @@
             <h1 class="text-4xl md:text-8xl font-bold  mb-1/2  text-white">VALGRIT</h1>
             <p class="text-xl md:text-4xl  font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
             <a href="#saiba-mais"
-                class="inline-block hover:text-text-primary bg-text-primary text-text-white font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
+                class="inline-block  hover:bg-red-700 hover:text-white text-white bg-text-primary font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
                 SAIBA MAIS
             </a>
         </div>
     </section>
 
-    <section class="bg-white py-10 pt-24" id="development">
-        <div class="relative max-w-[1500px] mx-auto px-4">
-            <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full " id="mySwiper">
-                <div class="swiper-wrapper">
+    <section class="bg-white py-20" id="development">
+       <div class="relative max-w-[1820px] mx-auto px-4">
+    <!-- Swiper Slider -->
+    <div class="swiper mySwiper w-full h-full " id="mySwiper">
+        <div class="swiper-wrapper">
 
                     <x-frontend.slide :categories="$categories" />
 
@@ -46,6 +46,11 @@
                 <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
             </div>
 
+    <div
+        class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
+        <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+    </div>
+       </div>
     </section>
     <section>
         <div class="section-container flex justify-center items-center min-h-[693px] bg-white py-16">
@@ -69,7 +74,7 @@
         </div>
     </section>
     <section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1820px] flex flex-col md:flex-row items-center  rounded-lg overflow-hidden">
+        <div class="w-full max-w-[1820px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
             <!-- Image Side -->
             <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
                 <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="Beautiful Design"

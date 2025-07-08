@@ -1,52 +1,37 @@
 <x-frontend::layout>
-    @push('cs')
-   <style>
-    /* Custom scrollbar hide utility */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; 
-        /* Add grab cursor when hovering over the scrollable area */
-        cursor: grab;
-    }
-    /* When dragging, show grabbing cursor */
-    .no-scrollbar.cursor-grabbing {
-        cursor: grabbing;
-    }
-</style>
-    @endpush
     <section class="bg-white px-4 py-20 sm:pt-24 md:pt-28 lg:pt-40   mt-4 lg:mt-8 xl:mt-16">
         <div class="container mx-auto max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
 
             <!-- Image Slider -->
-<div class="px-0 sm:px-6 md:px-8">
-    <div class="w-full h-full aspect-square overflow-hidden shadow-md">
-        <img id="mainImage" src="{{ $product->primaryImage?->first()?->modified_image }}" alt="Main Product"
-            class="w-full h-full object-cover">
-    </div>
+            <div class="px-0 sm:px-6 md:px-8  ">
+                <div class="w-full h-full aspect-square overflow-hidden  shadow-md ">
+                    <img id="mainImage" src="{{ $product->primaryImage?->first()?->modified_image }}" alt="Main Product"
+                        class="w-full h-full object-cover">
+                </div>
 
-    <div class="relative group mt-4 w-full">
-        <!-- Left Arrow (hidden by default, visible on hover) -->
-        <button id="leftArrow"
-            onclick="scrollThumbnails(-1)"
-            class="absolute -left-10 top-1/2 -translate-y-1/2 z-10">
-            
-        </button>
+                <div class="relative">
+                    <!-- Left Navigation Button -->
+                    <button onclick="scrollThumbnails(-1)"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
+                        &#8592;
+                    </button>
 
-        <!-- Slider thumbnails -->
-        <x-frontend.detail-slider :product="$product" />
+                    <!-- Thumbnails Scroll Container -->
+                    <div id="thumbnailScroll" class="flex gap-2 mt-4 overflow-x-auto px-6 scroll-smooth no-scrollbar">
+                        @foreach ($product->nonPrimayImages as $thumbImage)
+                            <img src="{{ $thumbImage->modified_image }}"
+                                class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-36 object-cover cursor-pointer  {{ in_array($thumbImage->modified_image, ['r1.png', 'r2.png', 'r4.png']) ? 'bg-gray-50' : '' }} flex-shrink-0"
+                                onclick="document.getElementById('mainImage').src = this.src">
+                        @endforeach
+                    </div>
 
-        <!-- Right Arrow (hidden by default, visible on hover) -->
-        <button id="rightArrow"
-            onclick="scrollThumbnails(1)"
-            class="absolute -right-10 top-1/2 -translate-y-1/2 z-10 ">
-            
-        </button>
-    </div>
-</div>
-
+                    <!-- Right Navigation Button -->
+                    <button onclick="scrollThumbnails(1)"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
+                        &#8594;
+                    </button>
+                </div>
+            </div>
 
             <!-- Product Info -->
             <div class="px-1 sm:px-3 md:px-6 mt-4">
@@ -130,7 +115,7 @@
             </div>
 
             <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full" id="mySwiper">
+            <div class="swiper mySwiper w-full h-full">
                 <div class="swiper-wrapper ">
 
                     @foreach ($related_products as $product)
@@ -188,79 +173,15 @@
         </script>
 
 
-      <script>
-    function scrollThumbnails(direction) {
-        const container = document.getElementById('thumbnailScroll');
-        if (container) {
-            container.scrollBy({
-                left: direction * 150,
-                behavior: 'smooth'
-            });
-        }
-    }
-
-    // Show/Hide arrows based on image count and handle drag-to-scroll
-    document.addEventListener('DOMContentLoaded', function () {
-        const scrollContainer = document.getElementById('thumbnailScroll');
-        const leftArrow = document.getElementById('leftArrow');
-        const rightArrow = document.getElementById('rightArrow');
-
-        if (scrollContainer) {
-            const images = scrollContainer.querySelectorAll('img');
-
-            // Show/Hide arrows based on image count
-            if (images.length > 4) {
-                // Check if scroll is needed by comparing scrollWidth and clientWidth
-                // This is a more robust check than just image count, as image sizes vary.
-                // We will defer showing arrows until after the initial render.
-                setTimeout(() => { // Give browser time to render and calculate sizes
-                    if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
-                        leftArrow.classList.remove('hidden');
-                        rightArrow.classList.remove('hidden');
-                    }
-                }, 100); // Small delay
+        <script>
+            function scrollThumbnails(direction) {
+                const container = document.getElementById('thumbnailScroll');
+                container.scrollBy({
+                    left: direction * 150,
+                    behavior: 'smooth'
+                });
             }
-
-            // Enable drag to scroll
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            scrollContainer.addEventListener('mousedown', (e) => {
-                isDown = true;
-                scrollContainer.classList.add('cursor-grabbing');
-                startX = e.pageX - scrollContainer.offsetLeft;
-                scrollLeft = scrollContainer.scrollLeft;
-            });
-
-            scrollContainer.addEventListener('mouseleave', () => {
-                isDown = false;
-                scrollContainer.classList.remove('cursor-grabbing');
-            });
-
-            scrollContainer.addEventListener('mouseup', () => {
-                isDown = false;
-                scrollContainer.classList.remove('cursor-grabbing');
-            });
-
-            scrollContainer.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - scrollContainer.offsetLeft;
-                const walk = (x - startX) * 2; // Scroll speed
-                scrollContainer.scrollLeft = scrollLeft - walk;
-
-                // Optionally, hide buttons when dragging and show again on mouseup/mouseleave
-                // This is a more advanced UX consideration.
-                // If you want buttons to disappear while dragging, you'd add:
-                // leftArrow.classList.add('hidden');
-                // rightArrow.classList.add('hidden');
-                // And then re-show them in mouseup/mouseleave (if images.length > 4)
-            });
-        }
-    });
-</script>
-
+        </script>
     @endpush
 
 </x-frontend::layout>
