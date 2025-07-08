@@ -7,7 +7,7 @@
     <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"></a>
                     <div class="relative overflow-hidden min-h-[220px] mt-2">
                         <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
-                            class="rounded-sm w-full sm:h-52 lg:h-full md:w-full md:h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+                            class="rounded-sm w-full sm:h-52 lg:h-full md:w-full md:h-[220px] object-cover transition-transform duration-500 group-hover:scale-110">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500">
                         </div>
