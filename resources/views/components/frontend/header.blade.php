@@ -47,14 +47,24 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-6"> <button
-                        class="text-text-black hover:text-text-primary focus:outline-none">
-                        <svg class="h-4 w-4 sm:w-6 sm:h-6 md:h-7 md:w-7" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </button>
+                <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-8">
+                    {{-- search --}}
+                    <form action="{{ route('f.products.search') }}" method="GET" class="w-full max-w-2xl mx-auto px-4 sm:px-0">
+                        <div class="relative flex items-center">
+                            <!-- Search Input -->
+                            <input type="text" name="search" value="{{Request::get('search')}}" placeholder="Search Keyword"
+                            class="px-3 py-2 w-full text-sm bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 rounded-l focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                        <button
+                            class="bg-text-primary text-white px-3 py-2 rounded-r hover:bg-text-primary/80 transition-colors">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                        </button>
+                        </div>
+                    </form>
+
                     <div class="dropdown dropdown-end text-text-black focus:outline-none">
                         <div tabindex="0" role="button" class="m-1">
                             <svg class="h-4 w-4 sm:w-6 sm:h-6 md:h-7 md:w-7" xmlns="http://www.w3.org/2000/svg"
@@ -84,13 +94,6 @@
                         </ul>
 
                     </div>
-                    {{-- <button class="text-text-black hover:text-text-primary focus:outline-none">
-                        <svg class="h-4 w-4 sm:w-6 sm:h-6 md:h-7 md:w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </button> --}}
                 </div>
 
             </div>
