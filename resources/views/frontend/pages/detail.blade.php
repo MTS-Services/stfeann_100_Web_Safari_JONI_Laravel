@@ -23,19 +23,31 @@
 
                 <div class="relative">
     <!-- Left Navigation Button -->
-                <button id="leftArrow"
-                    onclick="scrollThumbnails(-1)"
-                    class="absolute -left-10 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2 hidden">
-                    &#8592;
-                </button>
+               <!-- Left Arrow -->
+<button id="leftArrow"
+    onclick="scrollThumbnails(-1)"
+    class="absolute -left-10 top-1/2 -translate-y-1/2 z-10 bg-[#FFFCF0] border rounded-full shadow p-2 hidden hover:bg-[#fff7e0] transition">
+    <!-- Left Chevron SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+</button>
 
-                <x-frontend.detail-slider :product="$product" />
+<!-- Component -->
+<x-frontend.detail-slider :product="$product" />
 
-                <button id="rightArrow"
-                    onclick="scrollThumbnails(1)"
-                    class="absolute -right-10 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2 hidden">
-                    &#8594;
-                </button>
+<!-- Right Arrow -->
+<button id="rightArrow"
+    onclick="scrollThumbnails(1)"
+    class="absolute -right-10 top-1/2 -translate-y-1/2 z-10 bg-[#FFFCF0] border rounded-full shadow p-2 hidden hover:bg-[#fff7e0] transition">
+    <!-- Right Chevron SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+</button>
+
 
 </div>
 
