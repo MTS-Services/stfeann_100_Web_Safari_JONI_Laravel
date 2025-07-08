@@ -10,13 +10,17 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        if ($request->search) {
-            $search = $request->search;
-            $searchProducts = Product::where('name', 'like', "%$search%")->latest()->paginate(15);
+        $searchTerm = trim($request->input('search'));
 
-            return view('frontend.pages.search', compact('searchProducts'));
-        } else {
-            return redirect()->back()->with('massage', 'empty');
+        if (!$searchTerm) {
+            return redirect()->back()->with('message', 'Search term cannot be empty.');
         }
+
+        $searchProducts = Product::where('name', 'like', "%{$searchTerm}%")
+            ->latest()
+            ->paginate(15);
+
+        return view('frontend.pages.search', compact('searchProducts', 'searchTerm'));
     }
 }
+
