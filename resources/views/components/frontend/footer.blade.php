@@ -232,7 +232,7 @@
                     class="text-text-black text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
                     Sobre</h3>
                 <ul class="space-y-3 text-base sm:text-lg">
-                    <li><a href="#"
+                    <li><a href="{{ route('login') }}"
                             class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
                             Login
                         </a></li>
