@@ -20,7 +20,7 @@
                     </button>
                 </div>
 
-                <div class="flex-shrink-0 flex justify-center pl-8 flex-grow md:flex-grow-0 md:block">
+                <div class="flex-shrink-0 flex justify-center pl-12 flex-grow md:flex-grow-0 md:block">
                     <a href="{{ route('f.home') }}" class="flex items-center ">
                         <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-10 md:h-20">
                     </a>
@@ -49,21 +49,27 @@
 
                 <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-8">
                     {{-- search --}}
-                    <form action="{{ route('f.products.search') }}" method="GET" class="w-full max-w-2xl mx-auto px-4 sm:px-0">
-                        <div class="relative flex items-center">
-                            <!-- Search Input -->
-                            <input type="text" name="search" value="{{Request::get('search')}}" placeholder="Search Keyword"
-                            class="px-3 py-2 w-full text-sm bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 rounded-l focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" />
-                        <button
-                            class="bg-text-primary text-white px-3 py-2 rounded-r hover:bg-text-primary/80 transition-colors">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                        </button>
-                        </div>
-                    </form>
+                  <form action="{{ route('f.products.search') }}" method="GET"
+    class="w-full max-w-2xl mx-auto px-3 sm:px-4 md:px-6">
+    <div class="flex items-stretch w-full">
+        <!-- Search Input -->
+        <input type="text" name="search" value="{{ Request::get('search') }}"
+            placeholder="Search Keyword"
+            class="w-full text-sm sm:text-base px-2 sm:px-3 py-1 sm:py-2 rounded-l-md bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition" />
+
+        <!-- Search Button -->
+        <button type="submit"
+            class="bg-red-600 text-white px-3 sm:px-4 py-1 sm:py-2 flex items-center justify-center rounded-r-md hover:bg-red-700 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+    </div>
+</form>
+
+
 
                     <div class="dropdown dropdown-end text-text-black focus:outline-none">
                         <div tabindex="0" role="button" class="m-1">

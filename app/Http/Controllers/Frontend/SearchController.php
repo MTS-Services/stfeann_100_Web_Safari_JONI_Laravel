@@ -18,7 +18,7 @@ class SearchController extends Controller
 
         $searchProducts = Product::where('name', 'like', "%{$searchTerm}%")
             ->latest()
-            ->paginate(15);
+            ->paginate(5);
 
         return view('frontend.pages.search', compact('searchProducts', 'searchTerm'));
     }
