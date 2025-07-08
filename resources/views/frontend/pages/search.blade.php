@@ -13,7 +13,7 @@
             @else
                 <div class="grid  gap-4 sm:gap-6">
                     @foreach ($searchProducts as $product)
-                        <x-frontend.shop_product :product="$product" />
+                        <x-frontend.search_result :product="$product" />
                     @endforeach
                 </div>
             @endif
