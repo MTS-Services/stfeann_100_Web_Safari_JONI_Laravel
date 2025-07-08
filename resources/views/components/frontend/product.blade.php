@@ -1,10 +1,10 @@
 @props(['product'])
-<div class="bg-white  overflow-hidden  shadow-lg ">
+<div class="bg-white rounded overflow-hidden  shadow-lg p-2">
     <div class="group relative ">
         <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"></a>
         <div class="relative overflow-hidden">
             <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
-                class="w-[390px] h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+                class="rounded w-[390px] h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500">
             </div>
