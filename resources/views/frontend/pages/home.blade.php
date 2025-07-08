@@ -21,7 +21,7 @@
             <!-- Swiper Slider -->
             <div class="swiper mySwiper w-full h-full " id="mySwiper">
                 <div class="swiper-wrapper">
-
+                    
                     <x-frontend.slide :categories="$categories" />
 
                 </div>
@@ -75,7 +75,6 @@
                 <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="Beautiful Design"
                     class="w-full h-full object-cover rounded-xl">
             </div>
-
 
             <!-- Content Side -->
             <div
