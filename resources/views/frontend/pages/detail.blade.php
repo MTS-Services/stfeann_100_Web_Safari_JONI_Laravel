@@ -22,22 +22,23 @@
                 </div>
 
                 <div class="relative">
-                    <!-- Left Navigation Button -->
-                    <!-- Thumbnails Scroll Container (No Loop, No Buttons) -->
-                     <button onclick="scrollThumbnails(-1)"
-                        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-                        &#8592;
-                    </button>
-<!-- Thumbnails Scroll Container (No Loop, No Scrollbar) -->
+    <!-- Left Navigation Button -->
+                <button id="leftArrow"
+                    onclick="scrollThumbnails(-1)"
+                    class="absolute -left-10 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2 hidden">
+                    &#8592;
+                </button>
 
-          <x-frontend.detail-slider :product="$product" />
+                <x-frontend.detail-slider :product="$product" />
 
-     <button onclick="scrollThumbnails(1)"
-                        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-                        &#8594;
-                    </button>
+                <button id="rightArrow"
+                    onclick="scrollThumbnails(1)"
+                    class="absolute -right-10 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2 hidden">
+                    &#8594;
+                </button>
 
-                </div>
+</div>
+
             </div>
 
             <!-- Product Info -->
@@ -180,15 +181,59 @@
         </script>
 
 
-        <script>
-            function scrollThumbnails(direction) {
-                const container = document.getElementById('thumbnailScroll');
-                container.scrollBy({
-                    left: direction * 150,
-                    behavior: 'smooth'
-                });
-            }
-        </script>
+       <script>
+    function scrollThumbnails(direction) {
+        const container = document.getElementById('thumbnailScroll');
+        container.scrollBy({
+            left: direction * 150,
+            behavior: 'smooth'
+        });
+    }
+
+    // Show/Hide arrows based on image count
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollContainer = document.getElementById('thumbnailScroll');
+        const images = scrollContainer.querySelectorAll('img');
+        const leftArrow = document.getElementById('leftArrow');
+        const rightArrow = document.getElementById('rightArrow');
+
+        if (images.length > 4) {
+            leftArrow.classList.remove('hidden');
+            rightArrow.classList.remove('hidden');
+        }
+
+        // Enable drag to scroll
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.classList.add('cursor-grabbing');
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.classList.remove('cursor-grabbing');
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.classList.remove('cursor-grabbing');
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
+
     @endpush
 
 </x-frontend::layout>
