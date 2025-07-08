@@ -52,22 +52,44 @@
         1
     </a>
 
-    {{-- Show current & next page if not 1 --}}
     @php
         $current = $prods->currentPage();
         $last = $prods->lastPage();
     @endphp
 
-    {{-- Skip showing 1 again --}}
-    @if ($current > 1)
+    {{-- Show current page if not 1 --}}
+    @if ($current > 1 && $current != $last && $current != 2)
+        @if ($current > 3)
+            {{-- Show ... if gap --}}
+            <span class="w-12 h-12 flex items-center justify-center text-gray-600 text-xl">...</span>
+        @elseif($current == 3)
+            {{-- Show page 2 if just before 3 --}}
+            <a href="{{ $prods->url(2) }}" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+                2
+            </a>
+        @endif
+
         <a href="{{ $prods->url($current) }}" class="w-12 h-12 bg-red-700 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
             {{ $current }}
         </a>
     @endif
 
-    @if ($current + 1 <= $last)
+    {{-- Next page --}}
+    @if ($current + 1 < $last)
         <a href="{{ $prods->url($current + 1) }}" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
             {{ $current + 1 }}
+        </a>
+    @endif
+
+    {{-- Show ... before last page --}}
+    @if ($last - $current > 2)
+        <span class="w-12 h-12 flex items-center justify-center text-gray-600 text-xl">...</span>
+    @endif
+
+    {{-- Always show last page if more than 1 --}}
+    @if ($last > 1)
+        <a href="{{ $prods->url($last) }}" class="w-12 h-12 {{ $prods->currentPage() == $last ? 'bg-red-700' : 'bg-red-600' }} text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+            {{ $last }}
         </a>
     @endif
 
@@ -86,6 +108,8 @@
         </button>
     @endif
 </div>
+
+
 
 
 
