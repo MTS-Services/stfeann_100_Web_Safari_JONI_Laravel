@@ -3,7 +3,6 @@
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\SearchController;
 use Illuminate\Support\Facades\Route;
-use PhpOffice\PhpSpreadsheet\Calculation\TextData\Search;
 
 Route::group(['as' => 'f.'], function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
