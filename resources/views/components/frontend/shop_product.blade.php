@@ -1,3 +1,5 @@
+
+
 @props(['product'])
 
 
@@ -11,7 +13,7 @@
                         </div>
                     </div>
 
-                    <div class="lg:p-4 p-1 lg:p-4 p-1">
+                    <div class="lg:p-4 p-1">
                         <h5 class="text-[12px] lg:text-xl font-bold text-gray-800 sm:mt-1 mb-0">{{ $product->name }}</h5>
                         <div class="flex items-center mb-0">
                             <div class="flex space-x-1">
