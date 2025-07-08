@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
- <script>
+    <script>
         // On page load, immediately apply theme from localStorage to prevent flash
         (function() {
             let theme = localStorage.getItem('theme') || 'system';
@@ -57,7 +57,7 @@
         {{-- footer --}}
         <x-frontend.footer />
     </div>
-      <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
+    <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // if (typeof lucide !== 'undefined') {
@@ -65,11 +65,11 @@
             // }
         });
     </script>
-     <script>
+    <script>
         function adminDashboard() {
             return {
 
-                 // Responsive state
+                // Responsive state
                 desktop: window.innerWidth >= 1024,
                 mobile: window.innerWidth <= 768,
                 tablet: window.innerWidth < 1024,
@@ -79,7 +79,7 @@
                 // App state
                 searchQuery: '',
                 darkMode: true,
-                 handleResize() {
+                handleResize() {
                     this.desktop = window.innerWidth >= 1024;
                     if (this.desktop) {
                         this.mobile_menu_open = false;
@@ -103,29 +103,28 @@
                     }
                 },
             }
-              // Initialize Lucide icons after DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-            // }
-        });
+            // Initialize Lucide icons after DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                // if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+                // }
+            });
 
-        // Smooth scrolling for anchor links
-        document.addEventListener('click', function(e) {
-            if (e.target.matches('a[href^="#"]')) {
-                e.preventDefault();
-                const target = document.querySelector(e.target.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Smooth scrolling for anchor links
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('a[href^="#"]')) {
+                    e.preventDefault();
+                    const target = document.querySelector(e.target.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
-            }
-        });
+            });
 
         }
-        
     </script>
     <script src="{{ asset('frontend/js/header.js') }}"></script>
     @stack('js')
