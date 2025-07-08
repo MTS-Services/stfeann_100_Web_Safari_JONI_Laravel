@@ -47,15 +47,23 @@
         </a>
     @endif
 
-    {{-- Show current & next page --}}
+    {{-- Always show Page 1 --}}
+    <a href="{{ $prods->url(1) }}" class="w-12 h-12 {{ $prods->currentPage() == 1 ? 'bg-red-700' : 'bg-red-600' }} text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+        1
+    </a>
+
+    {{-- Show current & next page if not 1 --}}
     @php
         $current = $prods->currentPage();
         $last = $prods->lastPage();
     @endphp
 
-    <a href="{{ $prods->url($current) }}" class="w-12 h-12 {{ $current == $prods->currentPage() ? 'bg-red-700' : 'bg-red-600' }} text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
-        {{ $current }}
-    </a>
+    {{-- Skip showing 1 again --}}
+    @if ($current > 1)
+        <a href="{{ $prods->url($current) }}" class="w-12 h-12 bg-red-700 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+            {{ $current }}
+        </a>
+    @endif
 
     @if ($current + 1 <= $last)
         <a href="{{ $prods->url($current + 1) }}" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
