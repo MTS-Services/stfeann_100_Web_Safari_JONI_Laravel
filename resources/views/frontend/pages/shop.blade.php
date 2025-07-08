@@ -21,46 +21,75 @@
 
     </section>
 
-    <!-- Product Grid -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+   <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 
-            @foreach ($prods as $product)
-                <!-- Product Box -->
-                <x-frontend.shop_product :product="$product" />
-            @endforeach
+        @foreach ($prods as $product)
+            <x-frontend.shop_product :product="$product" />
+        @endforeach
 
-        </div>
     </div>
+</div>
 
 <div class="flex space-x-3 mt-10 mb-10 justify-center">
-  <!-- Prev Button -->
-  <button id="prevBtn" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition"> &larr; </button>
+    {{-- Previous Button --}}
+    @if ($prods->onFirstPage())
+        <button class="w-12 h-12 bg-gray-400 text-white rounded-md flex items-center justify-center cursor-not-allowed" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+        </button>
+    @else
+        <a href="{{ $prods->previousPageUrl() }}" class="w-12 h-12 bg-red-600 text-white rounded-md flex items-center justify-center hover:bg-red-700 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+        </a>
+    @endif
 
-  <!-- Page 1 -->
-  <button class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">1 </button>
+    {{-- Show current & next page --}}
+    @php
+        $current = $prods->currentPage();
+        $last = $prods->lastPage();
+    @endphp
 
-  <!-- Page 2 -->
-  <button class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">  2 </button>
+    <a href="{{ $prods->url($current) }}" class="w-12 h-12 {{ $current == $prods->currentPage() ? 'bg-red-700' : 'bg-red-600' }} text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+        {{ $current }}
+    </a>
 
-  <!-- Next Button -->
-  <button id="nextBtn" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">  &rarr; </button>
+    @if ($current + 1 <= $last)
+        <a href="{{ $prods->url($current + 1) }}" class="w-12 h-12 bg-red-600 text-white text-xl font-bold rounded-md flex items-center justify-center hover:bg-red-700 transition">
+            {{ $current + 1 }}
+        </a>
+    @endif
+
+    {{-- Next Button --}}
+    @if ($prods->hasMorePages())
+        <a href="{{ $prods->nextPageUrl() }}" class="w-12 h-12 bg-red-600 text-white rounded-md flex items-center justify-center hover:bg-red-700 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </a>
+    @else
+        <button class="w-12 h-12 bg-gray-400 text-white rounded-md flex items-center justify-center cursor-not-allowed" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </button>
+    @endif
 </div>
+
 
 
 </x-frontend::layout>
 <script>
-    // Dummy example: Pagination buttons click handler
     document.getElementById('prevBtn').addEventListener('click', function(e) {
         e.preventDefault();
         alert('Previous clicked');
-
     });
 
     document.getElementById('nextBtn').addEventListener('click', function(e) {
         e.preventDefault();
         alert('Next clicked');
-
-
     });
 </script>
