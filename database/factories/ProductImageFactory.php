@@ -18,7 +18,7 @@ class ProductImageFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'https://placehold.co/600x400/'
+            'image' => 'https://placehold.co/600x400/FF5733/FFFFFF?text=Product+Image'
                 . $this->faker->safeHexColor()
                 . '/white?text='
                 . urlencode($this->faker->word()),
