@@ -15,9 +15,9 @@
    <section class="flex justify-center items-center min-h-[697px] bg-white py-2 sm:py-2">
     <div class="w-full max-w-[1500px] flex flex-col md:flex-row items-center justify-center rounded-lg overflow-hidden">
         <!-- Image Side -->
-        <div class="md:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[550px] px-4 lg:px-8">
+        <div class="md:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[550px] px-4 lg:px-8 ">
             <img src="{{ asset('frontend/images/a1.jpg') }}" alt="Beautiful Design"
-                class="w-full h-full object-cover rounded-xl">
+                class="w-full h-full object-cover rounded-xl pb-4">
         </div>
         <!-- Content Side -->
         <div class="md:w-1/2 w-full flex flex-col mb-8 md:mb-16 justify-start items-center md:items-start p-6 sm:p-8 md:p-10 bg-gradient-to-br from-white to-gray-100">
@@ -40,7 +40,7 @@
     </div>
 </section>
 
-<section class="flex justify-center items-center bg-white py-2 sm:py-2">
+<section class="flex justify-center items-center bg-white py-2 sm:py-2 sm:pb-20 ">
     <div class="w-full max-w-[1500px] flex flex-col md:flex-row items-center justify-center rounded-lg overflow-hidden gap-6 px-4">
 
         <!-- Left Side with 2 Cards -->
