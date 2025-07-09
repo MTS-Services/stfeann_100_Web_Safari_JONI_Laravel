@@ -3,7 +3,7 @@
     <x-slot name="page_slug">home</x-slot>
 
 <section class="relative ">
-        <img src="{{ asset('assets/frontend/imagens/a2.jpg') }}" alt="About Us Background"
+        <img src="{{ asset('frontend/images/a2.jpg') }}" alt="About Us Background"
             class="w-full h-[85vh] object-cover">
         <div class="absolute inset-0 bg-black opacity-40"></div>
        <div class="absolute left-1/2 top-[70%] transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
@@ -20,7 +20,7 @@
         
         <!-- Image Side -->
         <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
-            <img src="{{ asset('assets/frontend/imagens/a1.jpg') }}" alt="Beautiful Design"
+            <img src="{{ asset('frontend/images/a1.jpg') }}" alt="Beautiful Design"
                 class="w-full h-full object-cover rounded-xl">
         </div>
 
