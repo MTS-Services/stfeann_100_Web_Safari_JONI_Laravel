@@ -134,8 +134,8 @@
             @else
             <div class="flex flex-col md:flex-row gap-4 mb-4"> {{-- Added mb-4 for spacing below login/register buttons --}}
                 <a href="{{ route('login') }}"
-                    class="w-full py-3 rounded-md text-lg font-semibold bg-blue-500 text-white border-none
-                        hover:bg-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40
+                    class="w-full py-3 rounded-md text-lg font-semibold bg-orange-400 text-white border-none
+                        hover:bg-orange-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40
                         transition-all duration-300 transform-gpu flex justify-center items-center">
                     User Login
                 </a>
@@ -147,11 +147,10 @@
                 </a>
             </div>
             @endauth
-
             <div class="flex justify-center">
                 <a href="{{ route('admin.login') }}"
-                    class="w-full py-3 rounded-md text-lg font-semibold bg-emerald-500 text-white border-none
-                        hover:bg-emerald-600 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40
+                    class="w-full py-3 rounded-md text-lg font-semibold bg-rose-500 text-white border-none
+                        hover:bg-rose-800 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40
                         transition-all duration-300 transform-gpu flex justify-center items-center">
                     Admin Login
                 </a>
