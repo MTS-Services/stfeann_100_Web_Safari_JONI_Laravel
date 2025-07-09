@@ -9,6 +9,9 @@
         {{ isset($title) ? $title . ' - ' : '' }}
         {{ config('app.name', 'Dashboard Setup') }}
     </title>
+
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" /> --}}
+    <link rel="shortcut icon" href="{{ asset('frontend/images/footer_logo.png') }}" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   

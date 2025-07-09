@@ -1,37 +1,59 @@
 <x-frontend::layout>
+    @push('cs')
+        <style>
+            /* Custom scrollbar hide utility */
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Add grab cursor when hovering over the scrollable area */
+                cursor: grab;
+            }
+
+            /* When dragging, show grabbing cursor */
+            .no-scrollbar.cursor-grabbing {
+                cursor: grabbing;
+            }
+        </style>
+    @endpush
     <section class="bg-white px-4 py-20 sm:pt-24 md:pt-28 lg:pt-40   mt-4 lg:mt-8 xl:mt-16">
         <div class="container mx-auto max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
 
             <!-- Image Slider -->
-            <div class="px-0 sm:px-6 md:px-8  ">
-                <div class="w-full h-full aspect-square overflow-hidden  shadow-md ">
+            <div class="px-0 sm:px-6 md:px-8">
+                <div class="w-full h-full aspect-square overflow-hidden shadow-md">
                     <img id="mainImage" src="{{ $product->primaryImage?->first()?->modified_image }}" alt="Main Product"
                         class="w-full h-full object-cover">
                 </div>
-
-                <div class="relative">
-                    <!-- Left Navigation Button -->
-                    <button onclick="scrollThumbnails(-1)"
-                        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-                        &#8592;
+                <div class="relative group mt-2 w-full">
+                    <button id="leftArrow"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-75 rounded-full p-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
                     </button>
 
-                    <!-- Thumbnails Scroll Container -->
-                    <div id="thumbnailScroll" class="flex gap-2 mt-4 overflow-x-auto px-6 scroll-smooth no-scrollbar">
-                        @foreach ($product->nonPrimayImages as $thumbImage)
-                            <img src="{{ $thumbImage->modified_image }}"
-                                class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-36 object-cover cursor-pointer  {{ in_array($thumbImage->modified_image, ['r1.png', 'r2.png', 'r4.png']) ? 'bg-gray-50' : '' }} flex-shrink-0"
-                                onclick="document.getElementById('mainImage').src = this.src">
-                        @endforeach
-                    </div>
+                    
+                    <!-- Slider thumbnails -->
+                    <x-frontend.detail-slider :product="$product" />
 
-                    <!-- Right Navigation Button -->
-                    <button onclick="scrollThumbnails(1)"
-                        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
-                        &#8594;
+                    <button id="rightArrow"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-75 rounded-full p-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </button>
                 </div>
             </div>
+
 
             <!-- Product Info -->
             <div class="px-1 sm:px-3 md:px-6 mt-4">
@@ -55,13 +77,19 @@
                 <div class="flex mb-4 gap-3">
                     <div class="mb-4">
                         <p class="font-semibold mb-2">Size:</p>
-                        <select class="border rounded px-7 py-2 w-full sm:w-50">
+                        <select class="border rounded px-4 py-2 w-full sm:w-50">
                             <option value="" selected disabled hidden>Selecionar Tamanho</option>
-                            @foreach ($product->attribute_values as $key => $size)
+                            {{-- @foreach ($product->attribute_values as $key => $size)
                                 <option value="{{ $key }}">
                                     {{ $size }}
                                 </option>
-                            @endforeach
+                            @endforeach --}}
+                                @foreach (App\Models\ProductAttribute::sizeList() as $key => $size)
+                                    <option value="{{ $key }}"
+                                        {{ collect(old('attribute_values'))->contains($key) ? 'selected' : '' }}>
+                                        {{ $size }}
+                                    </option>
+                                @endforeach
                         </select>
                     </div>
 
@@ -88,9 +116,15 @@
                         </p>
                     @else
                         <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde minus reprehenderit est sint,
-                            voluptate omnis! Possimus voluptatem in repellendus, magnam reiciendis nisi veritatis
-                            corrupti autem dignissimos fugit aliquid laboriosam. Voluptatibus saepe sequi soluta
+                            Descrição do ProdutoCriado para quem dá tudo em cada treino, este modelo combina
+                            performance, conforto e estilo num só.Fabricado com materiais respiráveis e de secagem
+                            rápida, adapta-se aos movimentos do teu corpo e mantém-te focado, mesmo nas sessões mais
+                            intensas. A costura reforçada e o corte ergonómico garantem liberdade total de movimentos —
+                            sem distrações, sem limitações.Ideal para treino de força, cardio ou uso no dia a dia.
+                            Porque quem vive com disciplina merece roupa à altura da sua dedicação.Porque vestir-se bem
+                            também é parte do mindset.Destaques:Tecido técnico com elasticidade e respirabilidadeSecagem
+                            rápidaCorte atlético e confortávelCosturas reforçadas para maior durabilidadeProduzido
+                            localmente com atenção ao detalhe
                         </p>
                     @endif
 
@@ -100,7 +134,7 @@
         </div>
     </section>
 
-{{-- related products --}}
+    {{-- related products --}}
     <section class="bg-white pb-24" id="development">
         <div class="container mx-auto max-w-[1820px]">
             <div class="relative px-4 mb-8">
@@ -115,7 +149,7 @@
             </div>
 
             <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full">
+            <div class="swiper mySwiper w-full h-full" id="mySwiper">
                 <div class="swiper-wrapper ">
 
                     @foreach ($related_products as $product)
@@ -174,13 +208,117 @@
 
 
         <script>
-            function scrollThumbnails(direction) {
+            document.addEventListener('DOMContentLoaded', function() {
                 const container = document.getElementById('thumbnailScroll');
-                container.scrollBy({
-                    left: direction * 150,
-                    behavior: 'smooth'
-                });
-            }
+                const leftArrow = document.getElementById('leftArrow');
+                const rightArrow = document.getElementById('rightArrow');
+
+                function updateArrowVisibility() {
+                    if (container) {
+                        const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+                        // Show/hide left arrow
+                        if (container.scrollLeft > 0) {
+                            leftArrow.style.display = 'block';
+                        } else {
+                            leftArrow.style.display = 'none';
+                        }
+
+                        // Show/hide right arrow
+                        if (container.scrollLeft < maxScrollLeft - 1) { // -1 for a small buffer
+                            rightArrow.style.display = 'block';
+                        } else {
+                            rightArrow.style.display = 'none';
+                        }
+                    }
+                }
+
+                function scrollThumbnails(direction) {
+                    if (container) {
+                        const scrollAmount = 120; // Adjust scroll speed if needed
+                        container.scrollBy({
+                            left: direction * scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                // Attach click events to arrows
+                if (leftArrow) {
+                    leftArrow.onclick = () => scrollThumbnails(-1);
+                }
+                if (rightArrow) {
+                    rightArrow.onclick = () => scrollThumbnails(1);
+                }
+
+                // Update arrows on scroll and on load
+                if (container) {
+                    container.addEventListener('scroll', updateArrowVisibility);
+                    window.addEventListener('load', updateArrowVisibility);
+                    window.addEventListener('resize', updateArrowVisibility); // Also on resize
+                }
+            });
+
+            // Show/Hide arrows based on image count and handle drag-to-scroll
+            document.addEventListener('DOMContentLoaded', function() {
+                const scrollContainer = document.getElementById('thumbnailScroll');
+                const leftArrow = document.getElementById('leftArrow');
+                const rightArrow = document.getElementById('rightArrow');
+
+                if (scrollContainer) {
+                    const images = scrollContainer.querySelectorAll('img');
+
+                    // Show/Hide arrows based on image count
+                    if (images.length > 4) {
+                        // Check if scroll is needed by comparing scrollWidth and clientWidth
+                        // This is a more robust check than just image count, as image sizes vary.
+                        // We will defer showing arrows until after the initial render.
+                        setTimeout(() => { // Give browser time to render and calculate sizes
+                            if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+                                leftArrow.classList.remove('hidden');
+                                rightArrow.classList.remove('hidden');
+                            }
+                        }, 100); // Small delay
+                    }
+
+                    // Enable drag to scroll
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+
+                    scrollContainer.addEventListener('mousedown', (e) => {
+                        isDown = true;
+                        scrollContainer.classList.add('cursor-grabbing');
+                        startX = e.pageX - scrollContainer.offsetLeft;
+                        scrollLeft = scrollContainer.scrollLeft;
+                    });
+
+                    scrollContainer.addEventListener('mouseleave', () => {
+                        isDown = false;
+                        scrollContainer.classList.remove('cursor-grabbing');
+                    });
+
+                    scrollContainer.addEventListener('mouseup', () => {
+                        isDown = false;
+                        scrollContainer.classList.remove('cursor-grabbing');
+                    });
+
+                    scrollContainer.addEventListener('mousemove', (e) => {
+                        if (!isDown) return;
+                        e.preventDefault();
+                        const x = e.pageX - scrollContainer.offsetLeft;
+                        const walk = (x - startX) * 2; // Scroll speed
+                        scrollContainer.scrollLeft = scrollLeft - walk;
+
+                        // Optionally, hide buttons when dragging and show again on mouseup/mouseleave
+                        // This is a more advanced UX consideration.
+                        // If you want buttons to disappear while dragging, you'd add:
+                        // leftArrow.classList.add('hidden');
+                        // rightArrow.classList.add('hidden');
+                        // And then re-show them in mouseup/mouseleave (if images.length > 4)
+                    });
+                }
+            });
         </script>
     @endpush
 
