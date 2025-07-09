@@ -1,12 +1,11 @@
 @props(['product'])
-
-<div class="bg-white  overflow-hidden  shadow-lg ">
+<div class="bg-white rounded overflow-hidden  shadow-lg p-2">
     <div class="group relative ">
          <a class="absolute inset-0 z-10" href="{{   route('f.detail', $product->slug) }}">
     </a>
         <div class="relative overflow-hidden">
             <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
-                class="w-[390px] h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+                class="rounded w-[390px] h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
             <div
                 class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500">
             </div>
@@ -31,9 +30,9 @@
             <span class="text-gray-600 text-xs ml-2">(4.0)</span>
         </div> --}}
         <div class="flex justify-between items-center mt-3">
-            <h4 class="text-2xl font-extrabold text-black">{{ $product->price }}€</h4>
+            <h4 class="text-ms text-xl font-extrabold text-black">{{ $product->price }}€</h4>
             <button
-                class="bg-text-primary text-white rounded-lg px-4 py-2 text-base font-semibold hover:bg-text-primary/80 duration-300 ease-in-out flex items-center gap-3 shadow relative">
+                class=" bg-text-primary text-white rounded-lg px-2 py-2 text-base font-semibold hover:bg-text-primary/80 duration-300 ease-in-out flex items-center gap-3 shadow relative">
                 <a class="absolute inset-0" href="Javascript:void(0);"></a>
                 <!-- Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"

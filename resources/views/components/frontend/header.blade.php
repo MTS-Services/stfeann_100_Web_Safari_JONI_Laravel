@@ -1,41 +1,10 @@
 <style>
     /* Keyframe animations - these still need to be in custom CSS as Tailwind doesn't generate them directly */
-    @keyframes fade-in-down {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in-down {
-        animation: fade-in-down 0.4s ease-out forwards;
-    }
-
-    /* Backdrop animation - also custom */
-    .modal::backdrop {
-        animation: fade-in-backdrop 0.3s ease-out forwards;
-    }
-
-    @keyframes fade-in-backdrop {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
 </style>
 <section class="bg-text-secondary">
     <nav class="bg-white shadow-md fixed top-0 w-full z-50">
-        <div class="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div class="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
             <div class="flex items-center justify-between h-10">
-
                 <div class="md:hidden">
                     <button id="mobile-menu-button"
                         class="inline-flex items-center justify-center p-2 rounded-md text-text-black hover:text-text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
@@ -81,7 +50,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-8">
+                <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-8 tablet:mr-16 mr-0">
                     {{-- search --}}
                     <form action="{{ route('f.products.search') }}" method="GET"
                         class="w-full max-w-2xl mx-auto px-3 sm:px-4 md:px-6">
@@ -104,71 +73,72 @@
                     </form>
 
 
-                  <div>
-    <div class="text-gray-900">
-        <button onclick="userModal.showModal()" class="m-1 focus:outline-none">
-            <svg class="h-6 w-6 sm:w-8 sm:h-8 text-gray-700 hover:text-blue-500 transition-colors duration-300"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-        </button>
-    </div>
+                    <div>
+                        <div class="text-gray-900">
+                            <button onclick="userModal.showModal()" class="m-1 focus:outline-none">
+                                <svg class="h-6 w-6 sm:w-8 sm:h-8 text-gray-700 hover:text-blue-500 transition-colors duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </button>
+                        </div>
 
-    <dialog id="userModal" class="modal">
-        <div class="modal-box p-6 rounded-lg shadow-xl animate-fade-in-down">
-            <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800">Welcome!</h3>
+                        <dialog id="userModal" class="modal">
+                            <div class="modal-box p-6 rounded-lg shadow-xl animate-fade-in-down">
+                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800">Welcome!</h3>
 
-            @auth
-            <div class="flex justify-center mb-4"> {{-- Added mb-4 for spacing below sign out button --}}
-                <form action="{{ route('logout') }}" method="POST" class="w-full">
-                    @csrf
-                    <button type="submit"
-                        class="w-full py-3 rounded-md text-lg font-semibold bg-red-500 text-white border-none
+                                @auth
+                                    <div class="flex justify-center mb-4"> {{-- Added mb-4 for spacing below sign out button --}}
+                                        <form action="{{ route('logout') }}" method="POST" class="w-full">
+                                            @csrf
+                                            <button type="submit"
+                                                class="w-full py-3 rounded-md text-lg font-semibold bg-red-500 text-white border-none
                             hover:bg-red-600 hover:scale-105 hover:shadow-lg hover:shadow-red-500/40
                             transition-all duration-300 transform-gpu flex justify-center items-center">
-                        Sign Out
-                    </button>
-                </form>
-            </div>
-            @else
-            <div class="flex flex-col md:flex-row gap-4 mb-4"> {{-- Added mb-4 for spacing below login/register buttons --}}
-                <a href="{{ route('login') }}"
-                    class="w-full py-3 rounded-md text-lg font-semibold bg-orange-400 text-white border-none
+                                                Sign Out
+                                            </button>
+                                        </form>
+                                    </div>
+                                @else
+                                    <div class="flex flex-col md:flex-row gap-4 mb-4"> {{-- Added mb-4 for spacing below login/register buttons --}}
+                                        <a href="{{ route('login') }}"
+                                            class="w-full py-3 rounded-md text-lg font-semibold bg-orange-400 text-white border-none
                         hover:bg-orange-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40
                         transition-all duration-300 transform-gpu flex justify-center items-center">
-                    User Login
-                </a>
-                <a href="{{ route('register') }}"
-                    class="w-full py-3 rounded-md text-lg font-semibold border-2 border-gray-500 text-gray-700 bg-transparent
+                                            User Login
+                                        </a>
+                                        <a href="{{ route('register') }}"
+                                            class="w-full py-3 rounded-md text-lg font-semibold border-2 border-gray-500 text-gray-700 bg-transparent
                         hover:bg-gray-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-gray-500/40
                         transition-all duration-300 transform-gpu flex justify-center items-center">
-                    Create Account
-                </a>
-            </div>
-            @endauth
-            <div class="flex justify-center">
-                <a href="{{ route('admin.login') }}"
-                    class="w-full py-3 rounded-md text-lg font-semibold bg-rose-500 text-white border-none
+                                            Create Account
+                                        </a>
+                                    </div>
+                                @endauth
+                                <div class="flex justify-center">
+                                    <a href="{{ route('admin.login') }}"
+                                        class="w-full py-3 rounded-md text-lg font-semibold bg-rose-500 text-white border-none
                         hover:bg-rose-800 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40
                         transition-all duration-300 transform-gpu flex justify-center items-center">
-                    Admin Login
-                </a>
-            </div>
+                                        Admin Login
+                                    </a>
+                                </div>
 
 
-            <div class="modal-action mt-8 flex justify-end">
-                <form method="dialog">
-                    <button
-                        class="py-2 px-4 rounded-md text-gray-600 border border-gray-300 bg-transparent
+                                <div class="modal-action mt-8 flex justify-end">
+                                    <form method="dialog">
+                                        <button
+                                            class="py-2 px-4 rounded-md text-gray-600 border border-gray-300 bg-transparent
                         hover:text-gray-800 transition-colors duration-300">
-                        Close
-                    </button>
-                </form>
-            </div>
-        </div>
-    </dialog>
-</div>
+                                            Close
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
 
 
                 </div>
