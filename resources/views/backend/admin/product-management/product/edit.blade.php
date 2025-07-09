@@ -103,7 +103,7 @@
                         {{-- Description --}}
                         <div class="space-y-2 sm:col-span-2">
                             <p class="label">{{ __('Description') }}</p>
-                            <textarea name="description" id="description" cols="" rows="10" class="textarea"></textarea>
+                            <textarea name="description" id="description" cols="" rows="10" class="textarea">{{ old('description', $product->description) }}</textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('description')" />
                         </div>
                         {{-- image --}}
