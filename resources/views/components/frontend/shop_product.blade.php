@@ -1,10 +1,10 @@
-
-
 @props(['product'])
 
 
 <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-    <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"></a>
+    <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}">
+    </a>
+
     <div class="relative overflow-hidden mt-4">
         <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
             class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
@@ -15,6 +15,7 @@
 
     <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">{{ $product->name }}</h5>
+
         <div class="flex items-center mb-4">
             <div class="flex space-x-1">
                 @for ($i = 0; $i < 4; $i++)
@@ -35,7 +36,7 @@
             <h4 class="text-2xl font-extrabold text-black">{{ $product->price }}€</h4>
             <button
                 class="bg-red-500 text-white rounded-lg px-4 py-2 text-base font-semibold group-hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors flex items-center gap-2 shadow relative">
-                <a class="absolute inset-0" href="Javascript:void(0);"></a>
+                <a class="absolute inset-0" href="javascript:void(0);"></a>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,5 +46,4 @@
             </button>
         </div>
     </div>
-
 </div>
