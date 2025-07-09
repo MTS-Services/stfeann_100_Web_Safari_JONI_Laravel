@@ -103,9 +103,7 @@
                         </p>
                     @else
                         <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde minus reprehenderit est sint,
-                            voluptate omnis! Possimus voluptatem in repellendus, magnam reiciendis nisi veritatis
-                            corrupti autem dignissimos fugit aliquid laboriosam. Voluptatibus saepe sequi soluta
+                            Descrição do ProdutoCriado para quem dá tudo em cada treino, este modelo combina performance, conforto e estilo num só.Fabricado com materiais respiráveis e de secagem rápida, adapta-se aos movimentos do teu corpo e mantém-te focado, mesmo nas sessões mais intensas. A costura reforçada e o corte ergonómico garantem liberdade total de movimentos — sem distrações, sem limitações.Ideal para treino de força, cardio ou uso no dia a dia. Porque quem vive com disciplina merece roupa à altura da sua dedicação.Porque vestir-se bem também é parte do mindset.Destaques:Tecido técnico com elasticidade e respirabilidadeSecagem rápidaCorte atlético e confortávelCosturas reforçadas para maior durabilidadeProduzido localmente com atenção ao detalhe
                         </p>
                     @endif
 
