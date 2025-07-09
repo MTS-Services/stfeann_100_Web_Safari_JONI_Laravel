@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductAttribute;
+use GuzzleHttp\Psr7\Request;
 
 class HomeController extends Controller
 {
@@ -40,6 +41,11 @@ class HomeController extends Controller
     return view('frontend.pages.about',);
   }
  
-
+  public function categoryProduct(string $slug){
+    $data['category'] = Category::where('slug', $slug)->first();
+    $data['categoryName'] = $data['category']->name;
+    $data['products'] = $data['category']->products()->orderBy('id', 'asc')->paginate(8);
+    return view('frontend.pages.category', $data);
+  }
 
 }
