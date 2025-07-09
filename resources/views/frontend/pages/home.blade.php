@@ -17,7 +17,7 @@
     </section>
 
     <section class="bg-white py-20" id="development">
-       <div class="relative max-w-[1820px] mx-auto px-4">
+       <div class="relative max-w-[1500px] mx-auto px-4">
     <!-- Swiper Slider -->
     <div class="swiper mySwiper w-full h-full " id="mySwiper">
         <div class="swiper-wrapper">

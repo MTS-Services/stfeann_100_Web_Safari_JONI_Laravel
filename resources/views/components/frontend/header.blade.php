@@ -1,35 +1,6 @@
 <style>
     /* Keyframe animations - these still need to be in custom CSS as Tailwind doesn't generate them directly */
-    @keyframes fade-in-down {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in-down {
-        animation: fade-in-down 0.4s ease-out forwards;
-    }
-
-    /* Backdrop animation - also custom */
-    .modal::backdrop {
-        animation: fade-in-backdrop 0.3s ease-out forwards;
-    }
-
-    @keyframes fade-in-backdrop {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
+ 
 </style>
 <section class="bg-text-secondary">
     <nav class="bg-white shadow-md fixed top-0 w-full z-50">
