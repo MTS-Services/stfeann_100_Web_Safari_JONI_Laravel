@@ -13,6 +13,6 @@ class ProductAttributeSeeder extends Seeder
      */
     public function run(): void
     {
-        ProductAttribute::factory()->count(50)->create();
+        ProductAttribute::factory()->count(15)->create();
     }
 }
