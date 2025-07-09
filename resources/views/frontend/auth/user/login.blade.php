@@ -9,15 +9,18 @@
         <!-- User Icon -->
         <div class="flex justify-center mb-8">
             <div class="w-24 h-24 bg-black text-white rounded-full border-4 border-white flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 " viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.656-10 5v3h20v-3c0-3.344-6.686-5-10-5z" />
-                </svg>
+                <a href="{{ route('f.home') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 " viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.656-10 5v3h20v-3c0-3.344-6.686-5-10-5z" />
+                    </svg>
+                </a>
             </div>
         </div>
 
         <!-- Email Address -->
         <div class="mb-4">
-            <x-input-label class="text-white " for="email" :value="__('Email')" />
+            <x-input-label class="text-white" for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 lg:w-full md:w-full w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Email Address" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
@@ -25,12 +28,7 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label class="text-white" for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 lg:w-full md:w-full w-full"
-                type="password"
-                name="password"
-                required autocomplete="current-password" placeholder="Password " />
-
+            <x-text-input id="password" class="block mt-1 lg:w-full md:w-full w-full" type="password" name="password" required autocomplete="current-password" placeholder="Password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -42,16 +40,29 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <!-- Login & Forgot Password -->
+        <div class="flex items-center justify-between mt-4">
+            
             @if (Route::has('password.request'))
-            <a class="underline text-sm text-white hover:text-gray-400 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                {{ __('Forgot your password?') }}
-            </a>
+                <a class="underline text-sm text-white hover:text-red-400 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 duration-300 transition-all ease-in-out" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
             @endif
 
             <x-primary-button class="ms-3 bg-red-600!">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+          <!-- Create Account -->
+    <div class="text-center mt-6">
+        <p class="text-white text-sm">
+            {{ __("Don't have an account?") }}
+            <a href="{{ route('register') }}" class="underline text-sm text-white hover:text-red-400 duration-300 transition-all ease-in-out">
+                {{ __('Create Account') }}
+            </a>
+        </p>
+    </div>
     </form>
+
+  
 </x-guest-layout>
