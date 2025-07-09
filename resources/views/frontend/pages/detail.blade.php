@@ -77,13 +77,19 @@
                 <div class="flex mb-4 gap-3">
                     <div class="mb-4">
                         <p class="font-semibold mb-2">Size:</p>
-                        <select class="border rounded px-7 py-2 w-full sm:w-50">
+                        <select class="border rounded px-4 py-2 w-full sm:w-50">
                             <option value="" selected disabled hidden>Selecionar Tamanho</option>
-                            @foreach ($product->attribute_values as $key => $size)
+                            {{-- @foreach ($product->attribute_values as $key => $size)
                                 <option value="{{ $key }}">
                                     {{ $size }}
                                 </option>
-                            @endforeach
+                            @endforeach --}}
+                                @foreach (App\Models\ProductAttribute::sizeList() as $key => $size)
+                                    <option value="{{ $key }}"
+                                        {{ collect(old('attribute_values'))->contains($key) ? 'selected' : '' }}>
+                                        {{ $size }}
+                                    </option>
+                                @endforeach
                         </select>
                     </div>
 
