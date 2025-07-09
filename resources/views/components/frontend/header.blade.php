@@ -147,7 +147,6 @@
                 </a>
             </div>
             @endauth
-
             <div class="flex justify-center">
                 <a href="{{ route('admin.login') }}"
                     class="w-full py-3 rounded-md text-lg font-semibold bg-rose-500 text-white border-none
