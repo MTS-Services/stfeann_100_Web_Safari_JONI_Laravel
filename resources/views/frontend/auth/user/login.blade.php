@@ -27,7 +27,7 @@
 
         <!-- Password -->
       <div class="mt-4 relative">
-    <x-input-label for="password" :value="__('Password')" />
+    <x-input-label class="text-white" for="password" :value="__('Password')" />
 
     <!-- Custom Input Field -->
     <input id="password" type="password" name="password" required autocomplete="current-password" class="block mt-1 w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10 text-sm" />
