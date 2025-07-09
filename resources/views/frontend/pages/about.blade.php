@@ -40,34 +40,34 @@
     </div>
 </section>
 
-<section class="flex justify-center items-center bg-white py-4 sm:py-6">
-    <div class="w-full max-w-[1500px] flex flex-col lg:flex-row items-start justify-between gap-6 px-4">
+<section class="flex justify-center items-center bg-white py-2 sm:py-2">
+    <div class="w-full max-w-[1500px] flex flex-col md:flex-row items-center justify-center rounded-lg overflow-hidden gap-6 px-4">
 
         <!-- Left Side with 2 Cards -->
-        <div class="w-full lg:w-1/2 grid grid-cols-1 gap-4">
-            <!-- Card 1 -->
-            <div class="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md">
-                <h2 class="text-lg sm:text-xl font-semibold mb-2 text-text-primary">A Nossa Missão</h2>
-                <p class="text-base sm:text-lg text-gray-800 font-bold">
-                    Queremos inspirar uma comunidade de pessoas que valorizam o esforço, a disciplina e a superação.
-                    Acreditamos que o que vestes pode ser uma extensão da tua mentalidade — e que o teu compromisso
-                    contigo mesmo merece roupa à altura.
-                </p>
-            </div>
+       <div class="md:w-1/2 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Card 1 -->
+    <div class="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md">
+        <h2 class="text-lg sm:text-xl font-semibold mb-2 text-text-primary">A Nossa Missão</h2>
+        <p class="text-base sm:text-lg text-gray-800 font-bold">
+            Queremos inspirar uma comunidade de pessoas que valorizam o esforço, a disciplina e a superação.
+            Acreditamos que o que vestes pode ser uma extensão da tua mentalidade — e que o teu compromisso
+            contigo mesmo merece roupa à altura.
+        </p>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md">
+        <h2 class="text-lg sm:text-xl font-semibold mb-2 text-text-primary">Produção com Propósito</h2>
+        <p class="text-base sm:text-lg text-gray-800 font-bold">
+            Cada peça é produzida com cuidado, em quantidades controladas, para garantir qualidade,
+            durabilidade e menor desperdício. Trabalhamos com fábricas locais que seguem padrões éticos,
+            respeitando quem faz e quem usa.
+        </p>
+    </div>
+</div>
 
-            <!-- Card 2 -->
-            <div class="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md">
-                <h2 class="text-lg sm:text-xl font-semibold mb-2 text-text-primary">Produção com Propósito</h2>
-                <p class="text-base sm:text-lg text-gray-800 font-bold">
-                    Cada peça é produzida com cuidado, em quantidades controladas, para garantir qualidade,
-                    durabilidade e menor desperdício. Trabalhamos com fábricas locais que seguem padrões éticos,
-                    respeitando quem faz e quem usa.
-                </p>
-            </div>
-        </div>
 
         <!-- Right Side with Full Card -->
-        <div class="w-full lg:w-1/2 flex flex-col justify-start items-center lg:items-start p-6 sm:p-8 bg-gradient-to-br from-white rounded-xl shadow-md">
+        <div class="md:w-1/2 w-full flex flex-col justify-start items-center md:items-start p-6 sm:p-8 bg-gradient-to-br  rounded-xl ">
             <h2 class="text-lg sm:text-xl font-semibold mb-3 text-text-primary">Compromisso Sustentável</h2>
             <p class="text-base sm:text-lg text-gray-800 font-bold">
                 Valorizamos a produção consciente e estamos constantemente a procurar materiais e soluções mais
@@ -79,6 +79,5 @@
         </div>
     </div>
 </section>
-
 
 </x-frontend::layout>
