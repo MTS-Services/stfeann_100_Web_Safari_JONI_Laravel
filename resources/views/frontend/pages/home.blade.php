@@ -113,57 +113,37 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
         <!-- Swiper Init -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var swiper = new Swiper(".categorySlider", {
-                    loop: true,
-                    spaceBetween: 10,
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    },
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                    breakpoints: {
-                        0: {
-                            slidesPerView: 2,
-                            slidesPerGroup: 2,
-                            spaceBetween: 8
-                        },
-                        480: {
-                            slidesPerView: 3,
-                            slidesPerGroup: 3,
-                            spaceBetween: 10
-                        },
-                        640: {
-                            slidesPerView: 4,
-                            slidesPerGroup: 4,
-                            spaceBetween: 12
-                        },
-                        768: {
-                            slidesPerView: 4,
-                            slidesPerGroup: 4,
-                            spaceBetween: 14
-                        },
-                        1024: {
-                            slidesPerView: 5,
-                            slidesPerGroup: 5,
-                            spaceBetween: 16
-                        },
-                        1280: {
-                            slidesPerView: 6,
-                            slidesPerGroup: 6,
-                            spaceBetween: 20
-                        }
-                    }
-                });
-            });
-        </script>
+       <script>
+    var swiper = new Swiper(".categorySlider", {
+        loop: true,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
+            },
+            640: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            1024: {
+                slidesPerView: 5,
+                slidesPerGroup: 1,
+            },
+            1280: {
+                slidesPerView: 6,
+                slidesPerGroup: 1,
+            },
+        },
+    });
+</script>
     @endpush
 </x-frontend::layout>
