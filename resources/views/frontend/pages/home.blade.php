@@ -17,7 +17,7 @@
     </section>
 
     <section class="bg-white py-20" id="development">
-       <div class="relative max-w-[1820px] mx-auto px-4">
+       <div class="relative max-w-[1500px] mx-auto px-4">
     <!-- Swiper Slider -->
     <div class="swiper mySwiper w-full h-full " id="mySwiper">
         <div class="swiper-wrapper">
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="px-4 sm:px-6 lg:px-0">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
                         <!-- Example Card (repeat this structure) -->
                         @foreach ($products as $product)
@@ -80,6 +80,7 @@
                 <img src="{{ asset('frontend/images/foto.jpg') }}" alt="Beautiful Design"
                     class="w-full h-full object-cover rounded-xl">
             </div>
+
 
             <!-- Content Side -->
             <div
