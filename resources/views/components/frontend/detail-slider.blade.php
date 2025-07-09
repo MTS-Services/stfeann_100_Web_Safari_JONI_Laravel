@@ -1,7 +1,7 @@
 @props(['product'])
 
 <div id="thumbnailScroll"
-    class="flex gap-2 overflow-x-auto scroll-smooth no-scrollbar px-1  w-full cursor-grab">
+    class="flex gap-1 overflow-x-auto scroll-smooth no-scrollbar shadow-lg  w-full cursor-grab">
 
     @foreach ($product->images as $image)
         <img src="{{ $image->modified_image }}"
