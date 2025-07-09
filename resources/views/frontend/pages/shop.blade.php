@@ -1,6 +1,6 @@
 <x-frontend::layout>
     <section class="relative w-full">
-        <img src="{{ asset('assets/frontend/imagens/shop.png') }}" alt="Fitness BG"
+        <img src="{{ asset('frontend/images/shop.png') }}" alt="Fitness BG"
             class="w-full h-[50vh] sm:h-[60vh] md:h-[85vh] object-cover" />
 
         <div class="absolute inset-0 bg-opacity-50 flex items-center justify-center sm:justify-end px-2 sm:px-8">
