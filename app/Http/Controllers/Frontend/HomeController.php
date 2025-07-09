@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
   public function home()
   {
-    $data['products'] = Product::with(['primaryImage', 'nonPrimayImages', 'productAttributes'])->featured()->orderBy('id', 'asc')->take(3)->get();
+    $data['products'] = Product::with(['primaryImage', 'nonPrimayImages', 'productAttributes'])->featured()->orderBy('name', 'asc')->take(3)->get();
     $data['categories']=Category::active()->get();
     return view('frontend.pages.home', $data);
   }
@@ -24,15 +24,14 @@ class HomeController extends Controller
       ->where('attribute_name', ProductAttribute::SIZE_ATTRIBUTE)
       ->pluck('attribute_value')
       ->toArray();
-    $data['related_products'] = Product::where('category_id', $data['product']->category_id)->where('id', '!=', $data['product']->id)->orderBy('id', 'asc')->take(6)->get();
+    $data['related_products'] = Product::where('category_id', $data['product']->category_id)->where('id', '!=', $data['product']->id)->orderBy('name', 'asc')->take(6)->get();
     $data['related_products']->load(['primaryImage', 'nonPrimayImages']);
     return view('frontend.pages.detail', $data);
   }
 
    public function shop()
     {
-        
-        $prods = Product::with(['primaryImage'])->orderBy('id', 'asc')->paginate(8);
+        $prods = Product::with(['primaryImage'])->orderBy('name', 'asc')->paginate(8);
         return view('frontend.pages.shop', compact('prods'));
     }
 
@@ -43,8 +42,7 @@ class HomeController extends Controller
  
   public function categoryProduct(string $slug){
     $data['category'] = Category::where('slug', $slug)->first();
-    $data['categoryName'] = $data['category']->name;
-    $data['products'] = $data['category']->products()->orderBy('id', 'asc')->paginate(8);
+    $data['products'] = Product::with('category')->where('category_id', $data['category']->id)->orderBy('name', 'asc')->get();
     return view('frontend.pages.category', $data);
   }
 

@@ -2,7 +2,7 @@
     <div class="section-container bg-white py-16 min-h-[493px] mt-20 flex flex-col items-center space-y-10">
         <!-- Category Name -->
         <h2 class="text-left! max-w-7xl w-full text-2xl ">
-            <span class="text-red-500 font-bold text-3xl">Category Name: </span> {{ $categoryName ?? 'All Products' }}
+            <span class="text-red-500 font-bold text-3xl">Category Name: </span> {{ $category?->name?? null }}
         </h2>
 
         <!-- Product Grid -->
