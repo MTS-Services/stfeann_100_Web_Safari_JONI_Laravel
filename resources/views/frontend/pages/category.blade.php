@@ -6,7 +6,7 @@
         </h2>
 
         <!-- Product Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-7xl px-4 md:py-10 sm:py-5 py-3 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full max-w-7xl px-4 md:py-10 sm:py-5 py-3 ">
             @foreach ($products as $product)
                 <div
                     class="group relative overflow-hidden rounded-md bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
