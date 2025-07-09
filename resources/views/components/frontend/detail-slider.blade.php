@@ -9,5 +9,4 @@
             onclick="document.getElementById('mainImage').src = this.src">
     @endforeach
 
-
 </div>

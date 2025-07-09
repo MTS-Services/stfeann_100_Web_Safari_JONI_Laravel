@@ -26,17 +26,15 @@
 
         <!-- Content Side -->
         <div class="md:w-1/2 max-w-[1828px] w-full flex flex-col mb-8 md:mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
-            <h1 class="text-2xl md:text-4xl text-text-primary mb-6 text-left">A nossa marca</h1>
+            <h1 class="text-2xl md:text-4xl text-black mb-6 text-left">Tudo começou com uma ideia simples durante um treino</h1>
             <p class="text-lg md:text-xl text-black mb-4 text-left">
-                A gente acredita que cada gota de suor que escorre, cada músculo que dói depois de um treino pesado, cada respiração ofegante, tudo isso conta a sua história. Uma história de persistência, de não desistir, de ir buscar mais uma repetição.
-                O nome "<span class="font-bold text-text-primary">Valgrit</span>" é mais que uma palavra; é o nosso grito de guerra. Vem de "valor" – o valor que damos a cada repetição, a cada quilómetro, a cada meta que você atinge. E "grit" – aquela garra, aquela coragem que aparece quando você está exausto, mas a sua mente diz: "só mais uma!" E a cor vermelho-sangue do nosso logo? Não é por acaso. É a cor da paixão que arde, da energia que pulsa em cada um de nós quando estamos a dar o nosso melhor.
-                <br /><br />
-                Nascemos para o ginásio, sim. Mas também para as ruas, para a pista, para aquele momento em que a sua vontade encontra a ação. Cada peça "<span class="font-bold text-text-primary">Valgrit</span>" é feita pensando em você, no atleta que você é. Pra te dar aquele conforto que você precisa pra se mover sem limites, a respirabilidade pros treinos mais puxados e a durabilidade pra aguentar todas as suas batalhas.
-                <br /><br />
-                A "<span class="font-bold text-text-primary">Valgrit</span>" não é só roupa. É um compromisso. Um compromisso com o seu melhor eu, com os seus objetivos e com a certeza de que, com a garra certa, não existe limite para o que você pode conquistar.
-                <br /><br />
-                Vista "<span class="font-bold text-text-primary">Valgrit</span>". Sinta a sua força. Conquiste o seu impossível.
-            </p>
+               Depois de anos a frequentar o ginásio diariamente, percebemos que faltava algo no mercado: roupa que fosse realmente pensada para quem leva o treino a sério — que combinasse conforto, estilo, durabilidade e que também representasse a mentalidade de quem vive este estilo de vida.
+               <br/>
+               <br/>
+               A ideia surgiu entre conversas no pós-treino, com o corpo cansado mas a mente cheia de energia:"E se criássemos uma marca que realmente entendesse a linguagem do ginásio?"Não queríamos apenas mais uma marca. Queríamos construir algo com identidade, com propósito, com garra.
+               <br/>
+               <br/>
+               Começámos com esboços simples, a testar tecidos, a falar com pequenas oficinas de produção, a errar e a ajustar. Cada peça foi criada com atenção ao detalhe, pensando em quem dá tudo no treino — e também fora dele<br/><br/> A Nossa Missão <br/>Queremos inspirar uma comunidade de pessoas que valorizam o esforço, a disciplina e a superação. Acreditamos que o que vestes pode ser uma extensão da tua mentalidade — e que o teu compromisso contigo mesmo merece roupa à altura.<br/><br/>Produção com Propósito <br/>Cada peça é produzida com cuidado, em quantidades controladas, para garantir qualidade, durabilidade e menor desperdício. Trabalhamos com fábricas locais que seguem padrões éticos de produção, respeitando quem faz e quem usa.<br/><br/> Valorizamos a produção consciente e estamos constantemente a procurar materiais e soluções mais sustentáveis, sem comprometer a performance.<br/><br/>Esta marca é para quem vive com garra. Para quem entende que o verdadeiro progresso vem da consistência.<br/><br/>Bem-vindo à nossa história — e obrigado por fazer parte dela. </p>
         </div>
 
     </div>

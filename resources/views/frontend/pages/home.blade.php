@@ -19,7 +19,7 @@
     <section class="bg-white py-20" id="development">
         <div class="relative max-w-[1500px] mx-auto px-4">
             <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full " id="mySwiper">
+            <div class="swiper categorySlider w-full h-full " id="mySwiper">
                 <div class="swiper-wrapper">
 
                     <x-frontend.slide :categories="$categories" />
@@ -35,20 +35,16 @@
             <div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
 
             <!-- Navigation buttons -->
-            <!-- Show navigation on all screens, but position differently for mobile -->
-            <div
-                class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
-                <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-            </div>
+            <div class="hidden 4xl:block">
+                <div
+                    class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
+                    <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+                </div>
 
-            <div
-                class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
-                <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-            </div>
-
-            <div
-                class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
-                <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+                <div
+                    class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
+                    <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -112,37 +108,62 @@
             </div>
         </div>
     </section>
+    @push('js')
+        <!-- Swiper JS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+        <!-- Swiper Init -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var swiper = new Swiper(".categorySlider", {
+                    loop: true,
+                    spaceBetween: 10,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 8
+                        },
+                        480: {
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                            spaceBetween: 10
+                        },
+                        640: {
+                            slidesPerView: 4,
+                            slidesPerGroup: 4,
+                            spaceBetween: 12
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            slidesPerGroup: 4,
+                            spaceBetween: 14
+                        },
+                        1024: {
+                            slidesPerView: 5,
+                            slidesPerGroup: 5,
+                            spaceBetween: 16
+                        },
+                        1280: {
+                            slidesPerView: 6,
+                            slidesPerGroup: 6,
+                            spaceBetween: 20
+                        }
+                    }
+                });
+            });
+        </script>
+    @endpush
 </x-frontend::layout>
-<!-- Swiper JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- Swiper Init -->
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        spaceBetween: 20,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 2,
-                slidesPerGroup: 1,
-            },
-            640: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            1024: {
-                slidesPerView: 5,
-                slidesPerGroup: 1,
-            },
-        },
-    });
-</script>
