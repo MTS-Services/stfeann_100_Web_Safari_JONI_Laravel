@@ -3,10 +3,10 @@
     <x-slot name="page_slug">home</x-slot>
 
     <section class="relative ">
-        <img src="{{ asset('frontend/images/foto.jpg') }}" alt="About Us Background"
-            class="w-full h-[85vh] object-cover">
+        <img src="{{ asset('frontend/images/foto.jpg') }}" alt="About Us Background" class="w-full h-[85vh] object-cover">
         <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 !text-center transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10  md:text-left">
+        <div
+            class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 !text-center transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10  md:text-left">
             <h1 class="text-4xl md:text-8xl font-bold  mb-1/2  text-white">VALGRIT</h1>
             <p class="text-xl md:text-4xl  font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
             <a href="#saiba-mais"
@@ -17,10 +17,10 @@
     </section>
 
     <section class="bg-white py-20" id="development">
-       <div class="relative max-w-[1820px] mx-auto px-4">
-    <!-- Swiper Slider -->
-    <div class="swiper mySwiper w-full h-full " id="mySwiper">
-        <div class="swiper-wrapper">
+        <div class="relative max-w-[1820px] mx-auto px-4">
+            <!-- Swiper Slider -->
+            <div class="swiper mySwiper w-full h-full " id="mySwiper">
+                <div class="swiper-wrapper">
 
                     <x-frontend.slide :categories="$categories" />
 
@@ -36,21 +36,23 @@
 
             <!-- Navigation buttons -->
             <!-- Show navigation on all screens, but position differently for mobile -->
-            <div
-                class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
-                <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+            <div class="hidden 4xl:block">
+                <div
+                    class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
+                    <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+                </div>
+
+                <div
+                    class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
+                    <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
+                </div>
             </div>
 
-            <div
-                class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
+            {{-- <div
+                class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 :-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
                 <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-            </div>
-
-    <div
-        class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
-        <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-    </div>
-       </div>
+            </div> --}}
+        </div>
     </section>
     <section>
         <div class="section-container flex justify-center items-center min-h-[693px] bg-white py-16">
