@@ -12,7 +12,7 @@
                             class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500">
                         </div>
                     </div>  
-                        fdfddddddddddddddddddddddddddddd
+                        
                     <div class="lg:p-4 p-1">
                         <h5 class="text-[12px] lg:text-xl font-bold text-gray-800 sm:mt-1 mb-0">{{ $product->name }}</h5>
                         <div class="flex items-center mb-0">
