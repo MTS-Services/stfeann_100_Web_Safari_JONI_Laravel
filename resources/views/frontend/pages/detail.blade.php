@@ -130,17 +130,22 @@
             </div>
 
             <!-- Swiper Slider -->
-            <div class="swiper mySwiper w-full h-full" id="mySwiper">
-                <div class="swiper-wrapper ">
+            <!-- Responsive Padding Wrapper -->
+<div class="px-4 sm:px-6 lg:px-8">
+    <div class="swiper mySwiper w-full h-full" id="mySwiper">
+        <div class="swiper-wrapper">
 
-                    @foreach ($related_products as $product)
-                        <x-frontend.detail :product="$product" />
-                    @endforeach
-                </div>
+            @foreach ($related_products as $product)
+                <x-frontend.detail :product="$product" />
+            @endforeach
 
-                <!-- Pagination (optional) -->
-                <div class="swiper-pagination mt-4"></div>
-            </div>
+        </div>
+
+        <!-- Pagination (optional) -->
+        <div class="swiper-pagination mt-4"></div>
+    </div>
+</div>
+
 
             <!-- Prev Arrow -->
 
