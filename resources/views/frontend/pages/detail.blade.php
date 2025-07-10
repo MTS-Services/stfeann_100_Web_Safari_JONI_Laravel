@@ -20,12 +20,12 @@
             }
         </style>
     @endpush
-    <section class="bg-white px-4 py-20 sm:pt-24 md:pt-28 lg:pt-40   mt-4 lg:mt-8 xl:mt-16">
+    <section class="bg-white dark:bg-bg-dark-secondary px-4 py-20 sm:pt-24 md:pt-28 lg:pt-40   mt-4 lg:mt-8 xl:mt-16">
         <div class="container mx-auto max-w-8xl grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
 
             <!-- Image Slider -->
             <div class="px-0 sm:px-6 md:px-8">
-                <div class="w-full h-full aspect-square overflow-hidden shadow-md">
+                <div class="w-full h-full aspect-square overflow-hidden shadow-md dark:shadow-shadow-dark-primary">
                     <img id="mainImage" src="{{ $product->primaryImage?->first()?->modified_image }}" alt="Main Product"
                         class="w-full h-full object-cover">
                 </div>
@@ -69,15 +69,15 @@
                 </div>
 
                 <!-- Price -->
-                <div class="text-xl sm:text-2xl font-bold text-black mb-6">
+                <div class="text-xl sm:text-2xl font-bold text-black mb-6 dark:text-white">
                     <span class="text-gray-500 dark:text-white">Price:</span> {{ $product->price }}€
                 </div>
 
                 <!-- Size & Quantity -->
-                <div class="flex mb-4 gap-3">
+                <div class="flex mb-4 gap-3 ">
                     <div class="mb-4">
                         <p class="font-semibold mb-2">Size:</p>
-                        <select class="border rounded px-4 py-2 w-full sm:w-50 dark:text-white">
+                        <select class="border rounded px-4 py-2 w-full sm:w-50 dark:bg-bg-dark-secondary dark:text-white">
                             <option value="" selected disabled hidden>Selecionar Tamanho</option>
                             {{-- @foreach ($product->attribute_values as $key => $size)
                                 <option value="{{ $key }}">
@@ -93,10 +93,10 @@
                         </select>
                     </div>
 
-                    <div class="mb-4">
-                        <p class="font-semibold mb-2 dark:text-white">Quantity:</p>
+                    <div class="mb-4 ">
+                        <p class="font-semibold mb-2  dark:text-white">Quantity:</p>
                         <input type="number" value="1" min="1"
-                            class="w-full sm:w-20 border rounded px-2 py-2">
+                            class="w-full sm:w-20 border dark:bg-bg-dark-secondary rounded px-2 py-2">
                     </div>
                 </div>
 
@@ -109,13 +109,13 @@
 
                 <!-- Description -->
                 <div class="mt-6">
-                    <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl mb-2 dark:text-white">Descrição</h1>
+                    <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl mb-2 dark:text-white ">Descrição</h1>
                     @if ($product->description)
-                        <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
+                        <p class="text-gray-700 dark:text-white  text-base sm:text-lg md:text-xl lg:text-2xl mb-4">
                             {{ $product->description }}
                         </p>
                     @else
-                        <p class="text-gray-700 text-base sm:text-lg md:text-xl lg:text-2xl mb-4 dark:text-white">
+                        <p class="text-gray-700 dark:text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-4 ">
                             Descrição do ProdutoCriado para quem dá tudo em cada treino, este modelo combina
                             performance, conforto e estilo num só.Fabricado com materiais respiráveis e de secagem
                             rápida, adapta-se aos movimentos do teu corpo e mantém-te focado, mesmo nas sessões mais
@@ -135,7 +135,7 @@
     </section>
 
     {{-- related products --}}
-    <section class="bg-white pb-24" id="development">
+    <section class="bg-white dark:bg-bg-dark-secondary pb-24" id="development">
         <div class="container mx-auto max-w-[1820px]">
             <div class="relative px-4 mb-8">
                 <div class="text-center px-2 sm:px-0">

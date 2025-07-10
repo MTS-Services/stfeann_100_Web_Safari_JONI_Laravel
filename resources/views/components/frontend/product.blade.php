@@ -1,11 +1,11 @@
 @props(['product'])
 
-<div class="group relative overflow-hidden rounded-lg bg-white dark:bg-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="group relative overflow-hidden rounded-lg bg-white dark:bg-bg-dark-secondary shadow-lg dark:shadow-shadow-dark-primary/30  transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"
         aria-label="View {{ $product->name }} details"></a>
 
     <!-- Image Container -->
-    <div class="relative aspect-square overflow-hidden border border-gray-50">
+    <div class="relative aspect-square overflow-hidden border dark:border-border-dark-tertiary border-gray-50">
         <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"
             width="340" height="340">
