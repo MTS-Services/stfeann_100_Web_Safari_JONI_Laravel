@@ -7,11 +7,11 @@
                 <h1
                     class="text-white text-[30px] sm:text-[60px] md:text-[80px] lg:text-[80px] font-extrabold leading-none uppercase tracking-tight
              mb-5 sm:mb-0">
-                    <span class="block sm:mr-20 -mb-4">Treina</span>
-                    <span class="block sm:mr-20 mt-4">Mais</span>
+                    <span class="block sm:mr-20 -mb-4 dark:text-white">Treina</span>
+                    <span class="block sm:mr-20 mt-4 dark:text-white">Mais</span>
                 </h1>
 
-                <p class="text-red-600 text-lg sm:mr-20 sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-6">
+                <p class="text-red-600 text-lg sm:mr-20 sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-6 dark:text-white">
                     O que fazer para <br />
                     melhorar o teu progresso
                 </p>

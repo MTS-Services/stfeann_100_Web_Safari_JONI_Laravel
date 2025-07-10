@@ -4,7 +4,7 @@
             <div class="flex items-center justify-between h-10">
                 <div class="md:hidden">
                     <button id="mobile-menu-button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-text-black hover:text-text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+                        class="inline-flex items-center justify-center p-2 rounded-md text-text-black hover:text-text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500 dark:text-white">
                         <span class="sr-only">Open main menu</span>
                         <svg id="hamburger-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -27,20 +27,20 @@
 
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="{{ route('f.home') }}"
-                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'text-text-primary' : 'text-text-black hover:text-text-primary dark:text-white' }}">
                         Início
                         <span
                             class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                     </a>
 
                     <a href="{{ route('f.shop') }}"
-                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'text-text-primary' : 'text-text-black hover:text-text-primary dark:text-white' }}">
                         Loja
                         <span
                             class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                     </a>
                     <a href="{{ route('f.about') }}"
-                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.about') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                        class="group relative nav-link px-3 py-2 rounded-md lg:text-2xl xl:text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.about') ? 'text-text-primary' : 'text-text-black hover:text-text-primary dark:text-white' }}">
                         Sobre nós
                         <span
                             class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.about') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
@@ -84,8 +84,7 @@
 
                         <dialog id="userModal" class="modal">
                             <div class="modal-box p-6 rounded-lg shadow-xl animate-fade-in-down">
-                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800 dark:text-white">
-                                    Welcome!</h3>
+                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800 dark:text-white ">Welcome!</h3>
 
                                 @auth
                                     <div class="flex justify-center mb-4"> {{-- Added mb-4 for spacing below sign out button --}}
@@ -94,7 +93,7 @@
                                             <button type="submit"
                                                 class="w-full py-3 rounded-md text-lg font-semibold bg-red-500 text-white border-none
                             hover:bg-red-600 hover:scale-105 hover:shadow-lg hover:shadow-red-500/40
-                            transition-all duration-300 transform-gpu flex justify-center items-center">
+                            transition-all duration-300 transform-gpu flex justify-center items-center dark:text-white">
                                                 Sign Out
                                             </button>
                                         </form>
@@ -104,13 +103,13 @@
                                         <a href="{{ route('login') }}"
                                             class="w-full py-3 rounded-md text-lg font-semibold bg-orange-400 text-white border-none
                         hover:bg-orange-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/40
-                        transition-all duration-300 transform-gpu flex justify-center items-center">
+                        transition-all duration-300 transform-gpu flex justify-center items-center dark:text-white">
                                             User Login
                                         </a>
                                         <a href="{{ route('register') }}"
                                             class="w-full py-3 rounded-md text-lg font-semibold border-2 border-gray-500 text-gray-700 bg-transparent
                         hover:bg-gray-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-gray-500/40
-                        transition-all duration-300 transform-gpu flex justify-center items-center">
+                        transition-all duration-300 transform-gpu flex justify-center items-center dark:text-white">
                                             Create Account
                                         </a>
                                     </div>
@@ -119,7 +118,7 @@
                                     <a href="{{ route('admin.login') }}"
                                         class="w-full py-3 rounded-md text-lg font-semibold bg-rose-500 text-white border-none
                         hover:bg-rose-800 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40
-                        transition-all duration-300 transform-gpu flex justify-center items-center">
+                        transition-all duration-300 transform-gpu flex justify-center items-center dark:text-white">
                                         Admin Login
                                     </a>
                                 </div>
@@ -129,7 +128,7 @@
                                     <form method="dialog">
                                         <button
                                             class="py-2 px-4 rounded-md text-gray-600 border border-gray-300 bg-transparent
-                        hover:text-gray-800 transition-colors duration-300">
+                        hover:text-gray-800 transition-colors duration-300 dark:text-white">
                                             Close
                                         </button>
                                     </form>
