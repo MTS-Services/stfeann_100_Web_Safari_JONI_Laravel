@@ -70,10 +70,10 @@
         </div>
     </section>
     <section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1820px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
+        <div class="w-full max-w-[1620px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
             <!-- Image Side -->
             <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
-                <img src="{{ asset('frontend/images/foto.jpg') }}" alt="Beautiful Design"
+                <img src="{{ asset('frontend/images/a3.jpg') }}" alt="Beautiful Design"
                     class="w-full h-full object-cover rounded-xl">
             </div>
 
