@@ -7,11 +7,11 @@
                 <h1
                     class="text-white text-[30px] sm:text-[60px] md:text-[80px] lg:text-[80px] font-extrabold leading-none uppercase tracking-tight
              mb-5 sm:mb-0">
-                    <span class="block sm:mr-20 -mb-4">Treina</span>
-                    <span class="block sm:mr-20 mt-4">Mais</span>
+                    <span class="block sm:mr-20 -mb-4 dark:text-white">Treina</span>
+                    <span class="block sm:mr-20 mt-4 dark:text-white">Mais</span>
                 </h1>
 
-                <p class="text-red-600 text-lg sm:mr-20 sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-6">
+                <p class="text-red-600 text-lg sm:mr-20 sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-6 dark:text-white">
                     O que fazer para <br />
                     melhorar o teu progresso
                 </p>
@@ -20,8 +20,8 @@
 
     </section>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16 dark:bg-bg-dark-secondary">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 dark:bg-bg-dark-secondary">
 
             @foreach ($prods as $product)
                 <x-frontend.shop_product :product="$product" />
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="flex space-x-3 mt-10 mb-10 justify-center">
+    <div class="flex space-x-3 mt-10 mb-10 justify-center dark:bg-bg-dark-secondary">
         {{-- Previous Button --}}
         @if ($prods->onFirstPage())
             <button

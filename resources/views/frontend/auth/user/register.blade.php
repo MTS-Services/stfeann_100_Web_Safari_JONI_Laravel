@@ -1,6 +1,10 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }} " class="bg-black py-20 px-10 rounded-sm ">
+    <form method="POST" action="{{ route('register') }} " class="bg-black py-20 px-10 rounded-sm shadow-lg ">
         @csrf
+
+        <div class="text-white text-2xl font-bold mb-4">
+            {{ __('Register') }}
+        </div>
 
         <!-- Name -->
         <div>

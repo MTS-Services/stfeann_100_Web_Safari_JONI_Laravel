@@ -50,7 +50,7 @@
                         'active' => 'admin',
                     ],
                 ]" />
-            {{-- <x-admin.navlink type="dropdown" icon="users" name="User Management" :page_slug="$active"
+            <x-admin.navlink type="dropdown" icon="users" name="User Management" :page_slug="$active"
                 :items="[
                     [
                         'name' => 'User',
@@ -58,7 +58,7 @@
                         'icon' => 'user',
                         'active' => 'user',
                     ],
-                ]" /> --}}
+                ]" />
             <x-admin.navlink type="dropdown" icon="box" name="Product Management" :page_slug="$active"
                 :items="[
                     [
@@ -74,10 +74,12 @@
                         'active' => 'product',
                     ],
                 ]" />
+            <x-admin.navlink type="single" icon="building-2" name="About" :route="route('about.index')" active="about"
+                :page_slug="$active" />
         </nav>
     </div>
-     <!-- User Profile -->
-     {{-- <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
+    <!-- User Profile -->
+    {{-- <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
          <div class="flex items-center space-x-3 transition-all duration-20 ease-in-out"
              :class="{ 'hidden': !sidebar_expanded }">
              <div>
@@ -90,4 +92,4 @@
              </div>
          </div>
      </div> --}}
- </aside>
+</aside>

@@ -1,10 +1,12 @@
 <x-guest-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status class="mb-4 " :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}" class="bg-black p-10 rounded-md shadow-sm">
+    <form method="POST" action="{{ route('login') }}" class="bg-black p-10 rounded-md shadow-sm shadow:gray">
         @csrf
-        {{ __('User Login') }}
+        <div class="text-white text-2xl font-bold mb-4">
+        {{ __( 'User Login') }}
+        </div>
 
         <!-- User Icon -->
         <div class="flex justify-center mb-8">
