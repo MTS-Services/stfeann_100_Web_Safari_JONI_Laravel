@@ -1,6 +1,6 @@
 @props(['product'])
 
-<div class="group relative overflow-hidden rounded-lg bg-white dark:bg-bg-dark-secondary shadow-lg dark:shadow-shadow-dark-primary/30  transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="group md:w-[30%] w-2/5  relative overflow-hidden rounded-lg text-center bg-white dark:bg-bg-dark-secondary shadow-lg dark:shadow-shadow-dark-primary/30  transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"
         aria-label="View {{ $product->name }} details"></a>
 
