@@ -1,11 +1,12 @@
 
 <footer
-    class="bg-gradient-to-br from-slate-50 to-white text-text-black py-8 px-4 sm:py-12 sm:px-6 lg:px-8 border-t border-gray-100 shadow-2xl">
+    class="bg-gradient-to-br bg-white   dark:bg-bg-dark-secondary text-text-black py-8 px-4 sm:py-12 sm:px-6 lg:px-8 border-t dark:border-border-dark-tertiary border-gray-100 shadow-2xl">
     <div class="max-w-7xl mx-auto">
+        <!-- ========== MOBILE VERSION ========== -->
         <div class="block sm:hidden mb-6">
             <details class="group mb-4 border-b border-gray-200 pb-4" open>
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Siga-nos</h3>
+                    <h3 class="text-lg font-bold text-text-black dark:text-white">Siga-nos</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -14,7 +15,7 @@
                 <div class="pt-4">
                     <div class="flex justify-center space-x-4">
                         <a href="#" aria-label="Twitter"
-                            class="p-3 bg-white rounded-full shadow-md border border-gray-100 hover:bg-blue-100 transition-colors">
+                            class="p-3 bg-white dark:bg-bg-dark-secondary rounded-full shadow-md border  border-gray-100 hover:bg-blue-100 transition-colors">
                             <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
@@ -38,9 +39,9 @@
                 </div>
             </details>
 
-            <details class="group mb-4 border-b border-gray-200 pb-4">
+            <details class="group mb-4 border-b  border-gray-200 pb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Contate-nos</h3>
+                    <h3 class="text-lg font-bold text-text-black dark:text-white">Contate-nos</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -55,7 +56,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <p class="text-text-black">Rua Toze, 49, Lisboa</p>
+                            <p class="text-text-black dark:text-white">Rua Toze, 49, Lisboa</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -64,7 +65,7 @@
                                 d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                         </svg>
                         <div>
-                            <span class="text-text-black">+351 989 844 1981</span>
+                            <span class="text-text-black dark:text-white">+351 989 844 1981</span>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3">
@@ -75,7 +76,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <p class="text-text-black">10:00 - 18:00<br>Segunda - Domingo</p>
+                            <p class="text-text-black dark:text-white">10:00 - 18:00<br>Segunda - Domingo</p>
                         </div>
                     </div>
                 </div>
@@ -83,33 +84,33 @@
 
             <details class="group mb-4 border-b border-gray-200 pb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Sobre</h3>
+                    <h3 class="text-lg font-bold text-text-black dark:text-white">Sobre</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </summary>
                 <div class="pt-4 space-y-3">
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Informações de
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors dark:text-white">Informações de
                         Entrega</a>
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Política de
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors dark:text-white">Política de
                         Privacidade</a>
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Termos e
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors dark:text-white">Termos e
                         Condições</a>
                 </div>
             </details>
 
             <details class="group mb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Baixe Nosso Aplicativo</h3>
+                    <h3 class="text-lg font-bold text-text-black dark:text-white">Baixe Nosso Aplicativo</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </summary>
                 <div class="pt-4">
-                    <p class="text-text-black mb-4">Baixe na Google Play ou App Store</p>
-                    <div class="flex ">
+                    <p class="text-text-black mb-4 dark:text-white">Baixe na Google Play ou App Store</p>
+                    <div class="flex  gap-2">
                         <a href="#" class="block">
                             <img src="{{ asset('frontend/images/play.jpg') }}" alt="Google Play"
                                 class="rounded-lg w-full hover:shadow-xl transition-all duration-300 h-auto"
@@ -124,7 +125,7 @@
                 </div>
             </details>
         </div>
-
+     <!-- ========== DESKTOP VERSION ========== -->
         <div
             class="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-12">
             <div class="flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
@@ -141,7 +142,7 @@
 
 
                 <div class="space-y-3">
-                    <p class="text-text-black text-muted md:pr-0 pr-3">Lorem ipsum dolor sit amet, consectetur
+                    <p class="text-text-black text-muted md:pr-0 pr-3 dark:text-white">Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit.</p>
                     <div class="flex justify-center sm:justify-start space-x-3">
                         <a href="#" aria-label="Twitter"
@@ -195,8 +196,8 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Endereço:</span>
-                            <p class="text-text-black">Rua Toze, 49, Lisboa</p>
+                            <span class="font-semibold text-text-black dark:text-white">Endereço:</span>
+                            <p class="text-text-black dark:text-white">Rua Toze, 49, Lisboa</p>
                         </div>
                     </div>
 
@@ -207,8 +208,8 @@
                                 d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Telefone:</span>
-                            <span class="text-text-black">+351 989 844 1981</span>
+                            <span class="font-semibold text-text-black dark:text-white">Telefone:</span>
+                            <span class="text-text-black dark:text-white">+351 989 844 1981</span>
                         </div>
                     </div>
 
@@ -220,8 +221,8 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Horário:</span>
-                            <p class="text-text-black">10:00 - 18:00<br>Segunda - Domingo</p>
+                            <span class="font-semibold text-text-black dark:text-white">Horário:</span>
+                            <p class="text-text-black dark:text-white">10:00 - 18:00<br>Segunda - Domingo</p>
                         </div>
                     </div>
                 </div>
@@ -233,19 +234,19 @@
                     Sobre</h3>
                 <ul class="space-y-3 text-base sm:text-lg">
                     <li><a href="{{ route('login') }}"
-                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
+                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2 dark:text-white">
                             Login
                         </a></li>
                     <li><a href="#"
-                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
+                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2 dark:text-white">
                             Cadastro
                         </a></li>
                     <li><a href="#"
-                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
+                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2 dark:text-white">
                             Informações de Entrega
                         </a></li>
                     <li><a href="#"
-                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
+                            class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2 dark:text-white">
                             Política de Privacidade
                         </a></li>
 
@@ -253,9 +254,9 @@
             </div>
 
             <div class="text-center sm:text-left">
-                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r">Baixe
+                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r ">Baixe
                     Nosso Aplicativo</h3>
-                <p class="text-sm sm:text-base text-text-black mb-4 sm:mb-6 font-medium">Baixe na Google Play ou App
+                <p class="text-sm sm:text-base text-text-black mb-4 sm:mb-6 font-medium dark:text-white">Baixe na Google Play ou App
                     Store</p>
 
                 <div class="flex flex-col sm:flex-row gap-3">
@@ -282,9 +283,9 @@
             </div>
         </div>
 
-        <div class="pt-6 sm:pt-8 border-t border-gray-200 text-center">
-            <p class="text-text-black text-xs sm:text-sm">
-                &copy; 2025 <span class="font-bold text-text-primary">Valgrit</span> - Loja de Roupas e Suplementos.
+        <div class="pt-6 sm:pt-8 border-t border-gray-200 dark:border-border-dark-tertiary text-center">
+            <p class="text-text-black dark:text-white text-xs sm:text-sm">
+                &copy; 2025 <span class="font-bold text-text-primary ">Valgrit</span> - Loja de Roupas e Suplementos.
                 Todos os direitos reservados.
             </p>
         </div>
