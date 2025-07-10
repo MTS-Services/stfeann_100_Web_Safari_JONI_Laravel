@@ -58,7 +58,7 @@
                             <!-- Search Input -->
                             <input type="text" name="search" value="{{ Request::get('search') }}"
                                 placeholder="Search Keyword"
-                                class="w-full text-sm sm:text-base px-2 sm:px-3 py-1 sm:py-2 rounded-l-md bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition" />
+                                class="w-full text-sm text-black sm:text-base px-2 sm:px-3 py-1 sm:py-2 rounded-l-md bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition" />
 
                             <!-- Search Button -->
                             <button type="submit"
@@ -87,7 +87,7 @@
 
                         <dialog id="userModal" class="modal">
                             <div class="modal-box p-6 rounded-lg shadow-xl animate-fade-in-down">
-                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800">Welcome!</h3>
+                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800 dark:text-white">Welcome!</h3>
 
                                 @auth
                                     <div class="flex justify-center mb-4"> {{-- Added mb-4 for spacing below sign out button --}}
