@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\About;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\ProductAttribute;
-use GuzzleHttp\Psr7\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -35,10 +35,11 @@ class HomeController extends Controller
         return view('frontend.pages.shop', compact('prods'));
     }
 
-  public function about()
-  {
-    return view('frontend.pages.about',);
-  }
+public function about()
+{
+    $data['abouts'] = About::active()->latest()->get();
+    return view('frontend.pages.about', $data);
+}
  
   public function categoryProduct(string $slug){
     $data['category'] = Category::where('slug', $slug)->first();

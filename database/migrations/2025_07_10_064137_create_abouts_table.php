@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('title'); // New: Title of the about section
             $table->string('image')->nullable(); // New: Image path (optional)
             $table->text('description'); // Existing
-            $table->tinyInteger('status')->default(About::STATUS_ACTIVE);
+            $table->tinyInteger('status')->default(About::STATUS_INACTIVE);
             $table->text('our_mission'); // New: Our Mission
             $table->text('vission'); // New: Vision
             $table->text('sustainable_commitment');

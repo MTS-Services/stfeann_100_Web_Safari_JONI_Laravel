@@ -32,25 +32,33 @@
 
                         {{-- Description --}}
                         <div class="space-y-2 sm:col-span-2">
-                            <p class="label">{{ __('Description') }}</p>
+                            <p class="label">{{ __('Description') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <textarea name="description" id="description" cols="" rows="10" class="textarea"></textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('description')" />
                         </div>
                         {{-- Our mission --}}
                         <div class="space-y-2 sm:col-span-2">
-                            <p class="label">{{ __('Our Mission') }}</p>
+                            <p class="label">{{ __('Our Mission') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <textarea name="our_mission" id="our_mission" cols="" rows="10" class="textarea"></textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('our_mission')" />
                         </div>
                         {{-- Our vision --}}
                         <div class="space-y-2 sm:col-span-2">
-                            <p class="label">{{ __('Vission') }}</p>
+                            <p class="label">{{ __('Vission') }}
+                                <span class="text-red-500">*</span>
+                           </p>
                             <textarea name="vission" id="vission" cols="" rows="10" class="textarea"></textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('vission')" />
                         </div>
                         {{-- sustainable commitment --}}
                         <div class="space-y-2 sm:col-span-2">
-                            <p class="label">{{ __('Sustainable Commitment') }}</p>
+                            <p class="label">{{ __('Sustainable Commitment') }}
+                                <span class="text-red-500">*</span>
+                           </p>
                             <textarea name="sustainable_commitment" id="sustainable_commitment" cols="" rows="10" class="textarea"></textarea>
                             <x-input-error class="mt-2" :messages="$errors->get('sustainable_commitment')" />
                         </div>

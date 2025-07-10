@@ -23,11 +23,11 @@ class AboutRequest extends FormRequest
     {
         return [
             'title' => 'string|required',
-            'description' => 'string|required',
+            'description' => 'string|required|min:700|max:880',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg',
-            'our_mission' => 'string|required',
-            'vission' => 'string|required',
-            'sustainable_commitment' => 'string|required',
+            'our_mission' => 'string|required|min:280|max:340',
+            'vission' => 'string|required|min:280|max:340',
+            'sustainable_commitment' => 'string|required|min:340|max:500',
         ];
     }
 }

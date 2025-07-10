@@ -14,6 +14,7 @@ class About extends BaseModel
         'vission',
         'image',
         'sustainable_commitment',
+        'status',
 
         'created_by',
         'updated_by',
