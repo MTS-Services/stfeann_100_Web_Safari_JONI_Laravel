@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -31,6 +31,7 @@
             }
         })();
     </script>
+       <script src="{{ asset('assets/js/toggle-theme.js') }}"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- sweetalert2 --}}
@@ -54,8 +55,8 @@
     @stack('cs')
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="font-sans antialiased" x-data>
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         {{-- @include('layouts.navigation') --}}
 
         <!-- Page Heading -->
@@ -146,6 +147,7 @@
 
         }
     </script>
+    
     <script src="{{ asset('frontend/js/header.js') }}"></script>
     @stack('js')
 </body>

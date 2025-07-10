@@ -25,6 +25,7 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+/* Toggle Theme mode */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 /* @theme {

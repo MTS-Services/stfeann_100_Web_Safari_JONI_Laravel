@@ -34,7 +34,6 @@
     <script src="{{ asset('assets/js/toggle-theme.js') }}"></script>
     {{-- BoxIcon  --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     @vite(['resources/css/dashboard.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
 
