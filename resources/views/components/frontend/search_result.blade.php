@@ -1,7 +1,7 @@
 @props(['product'])
 
 
-<div class="bg-white dark:bg-bg-dark-secondary  overflow-hidden relative group p-4 shadow-lg dark:shadow-shadow-dark-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-3">
+<div class="bg-white dark:bg-bg-dark-primary  overflow-hidden relative group p-4 shadow-lg dark:shadow-shadow-dark-primary/30 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-3">
     <!-- Image Section -->
     <div class="relative overflow-hidden w-full sm:w-2/5 rounded-lg dark:border border-border-dark-tertiary">
         <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"></a>
