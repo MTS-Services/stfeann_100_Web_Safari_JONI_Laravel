@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="flex space-x-3 mt-10 mb-10 justify-center">
+    <div class="flex space-x-3 mt-10 mb-10 justify-center dark:bg-bg-dark-secondary">
         {{-- Previous Button --}}
         @if ($prods->onFirstPage())
             <button

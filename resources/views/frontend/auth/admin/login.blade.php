@@ -4,7 +4,7 @@
 
     <form method="POST" action="{{ route('admin.login') }}" class="bg-black p-10 rounded-md shadow-sm">
         @csrf
-        <h1>{{ __('Admin Login') }}</h1>
+        <h1 class="text-white text-2xl font-bold mb-4">{{ __('Admin Login') }}</h1>
 
         <!-- User Icon -->
         <div class="flex justify-center mb-8">
