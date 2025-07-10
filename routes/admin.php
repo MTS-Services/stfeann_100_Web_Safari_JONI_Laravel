@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\Admin\About\AboutController;
 use App\Http\Controllers\Backend\Admin\AdminManagement\AdminController;
 use App\Http\Controllers\Backend\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Backend\Admin\ProductManagement\CategoryController;
@@ -36,7 +37,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
   });
 
   // Product Management
-  Route::group(['as'=>'pm.', 'prefix' => 'product-management'], function () {
+  Route::group(['as' => 'pm.', 'prefix' => 'product-management'], function () {
     // Categories
     Route::resource('category', CategoryController::class);
     Route::controller(CategoryController::class)->name('category.')->prefix('category')->group(function () {
@@ -58,4 +59,8 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
       Route::delete('/permanent-delete/{product}', 'permanentDelete')->name('permanent-delete');
     });
   });
+  // About Us
+  Route::get('about', [AboutController::class, 'index'])->name('about.index');
+ Route::match(['POST', 'PUT'], 'admin/about/store-or-update/{id?}', [AboutController::class, 'storeOrUpdate'])->name('about.storeOrUpdate');
+
 });
