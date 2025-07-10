@@ -1,6 +1,6 @@
 @props(['product'])
 
-<div class="group relative overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+<div class="group relative overflow-hidden rounded-lg bg-white dark:bg-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
     <a class="absolute inset-0 z-10" href="{{ route('f.detail', $product->slug) }}"
         aria-label="View {{ $product->name }} details"></a>
 
@@ -16,7 +16,7 @@
 
     <!-- Content -->
     <div class="p-1 lg:p-4">
-        <h3 class="mb-1 line-clamp-2 text-xs font-bold text-gray-800 md:text-sm lg:text-base">
+        <h3 class="mb-1 line-clamp-2 text-xs font-bold text-gray-800 dark:text-white md:text-sm lg:text-base">
             {{ $product->name }}
         </h3>
 
@@ -41,7 +41,7 @@
 
         <!-- Price & CTA -->
         <div class="mt-3 flex items-center justify-between gap-2">
-            <span class="text-sm font-bold text-black sm:text-base md:text-lg">{{ $product->price }}€</span>
+            <span class="text-sm font-bold text-black dark:text-white sm:text-base md:text-lg">{{ $product->price }}€</span>
             <button type="button"
                 class="flex items-center gap-1 rounded-lg bg-red-500 px-3 py-1.5 text-xs font-semibold text-white shadow transition-colors hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:px-3.5 sm:py-2 sm:text-sm md:px-4 md:py-2.5 md:text-base dark:text-white"
                 aria-label="Add {{ $product->name }} to cart">
