@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    <section class="bg-white dark:bg-gray-900 tablet:py-20 lg:py-14 md:py-10 sm:py-8 py-5 pt-10" id="development">
+    <section class="bg-white dark:bg-bg-dark-secondary tablet:py-20 lg:py-14 md:py-10 sm:py-8 py-5 pt-10" id="development">
         <div class="relative max-w-[1500px] mx-auto px-4">
             <!-- Swiper Slider -->
             <div class="swiper categorySlider w-full h-full " id="mySwiper">
@@ -38,21 +38,21 @@
             <div class="hidden 4xl:block">
                 <div
                     class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
-                    <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white dark:bg-gray-900"></i>
+                    <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white dark:bg-bg-dark-secondary"></i>
                 </div>
 
                 <div
                     class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
-                    <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white dark:bg-gray-900"></i>
+                    <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white dark:bg-bg-dark-secondary"></i>
                 </div>
             </div>
         </div>
     </section>
     <section>
-        <div class="section-container flex justify-center items-center min-h-[693px] bg-white dark:bg-gray-900 py-16">
+        <div class="section-container flex justify-center items-center min-h-[693px] bg-white dark:bg-bg-dark-secondary py-16">
             <div class="w-full max-w-[1200px]">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Destaques</h2>
+                    <h2 class="text-4xl font-bold dark:bg-bg-dark-secondary mb-4 dark:text-white">Destaques</h2>
                     <p class="text-gray-500 mb-8 text-lg dark:text-white">Descubra nossa coleção premium de roupas fitness</p>
                 </div>
 
@@ -69,7 +69,7 @@
             </div>
         </div>
     </section>
-    <section class="flex justify-center items-center min-h-[697px] bg-white dark:bg-gray-900 py-16">
+    <section class="flex justify-center items-center min-h-[697px] bg-white dark:bg-bg-dark-secondary py-16">
         <div class="w-full max-w-[1620px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
             <!-- Image Side -->
             <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
@@ -80,9 +80,8 @@
 
             <!-- Content Side -->
             <div
-                class="md:w-1/2 max-w-[1828px] w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
-                <h1 class="text-2xl md:text-4xl  text-black mb-6 text-left dark:text-white">Experimente a Diferença da Valgrit:
-                    Qualidade Que Se Sente em Cada Fibra!</h1>
+                class="md:w-1/2 max-w-[1828px] w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br dark:shadow-shadow-dark-primary/30 dark:border-border-dark-tertiary">
+                <h1 class="text-2xl md:text-4xl  text-black  mb-6 text-left dark:text-text-white bark:bg-bd-dark-secondary">Experimente a Diferença da Valgrit: Qualidade Que Se Sente em Cada Fibra!</h1>
                 <p class="text-lg md:text-xl text-black mb-4 text-left dark:text-white">
                     Na Valgrit, não vendemos apenas roupa desportiva – entregamos uma experiência de performance e
                     conforto incomparáveis.

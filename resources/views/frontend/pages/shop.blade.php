@@ -20,8 +20,8 @@
 
     </section>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12 mt-10 mb-16 dark:bg-bg-dark-secondary">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 dark:bg-bg-dark-secondary">
 
             @foreach ($prods as $product)
                 <x-frontend.shop_product :product="$product" />
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="flex space-x-3 mt-10 mb-10 justify-center">
+    <div class="flex space-x-3 mt-10 mb-10 justify-center dark:bg-bg-dark-secondary">
         {{-- Previous Button --}}
         @if ($prods->onFirstPage())
             <button

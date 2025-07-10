@@ -128,7 +128,7 @@
                                     <form method="dialog">
                                         <button
                                             class="py-2 px-4 rounded-md text-gray-600 border border-gray-300 bg-transparent
-                        hover:text-gray-800 transition-colors duration-300 dark:text-white">
+                        hover:text-gray-500 dark:hover:text-gray-100 transition-colors duration-300 dark:text-white">
                                             Close
                                         </button>
                                     </form>

@@ -3,7 +3,7 @@
 
  @foreach ($categories as $category)
         <!-- Slide -->
-        <div class="swiper-slide overflow-hidden bg-white dark:bg-gray-900 rounded-xl flex flex-col items-center border-2 border-gray-200 gap-2 h-auto transition-transform duration-500 group-hover:scale-110 relative p-2">
+        <div class="swiper-slide overflow-hidden bg-white dark:bg-bg-dark-secondary rounded-xl flex flex-col items-center border-2 border-gray-200 dark:border-border-dark-tertiary dark:shadow-shadow-dark-primary/30   gap-2 h-auto transition-transform duration-500 group-hover:scale-110 relative p-2">
             <a href="{{ route('f.categoryProduct', $category->slug) }}" class="absolute inset-0 bg-transparent z-10"></a>
             <div class="w-full h-24 md:h-32 lg:h-40 flex items-center justify-center">
                 <img src="{{ $category->modified_image }}" alt="{{ $category->name }}" class="w-full h-full object-contain">
