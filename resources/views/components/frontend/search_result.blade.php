@@ -42,8 +42,8 @@
         <div class="flex justify-between items-center mt-auto">
             <h4 class="text-base sm:text-2xl font-bold text-black">{{ $product->price }}€</h4>
             <a href="{{ route('f.detail', $product->slug) }}"
-                class="inline-flex items-center gap-2 bg-text-primary hover:bg-text-primary/80 text-white text-xs sm:text-base font-semibold rounded-lg px-3 py-2 transition-all duration-300 shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"
+                class="inline-flex items-center gap-2 bg-text-primary hover:bg-text-primary/80 text-white dark:text-white text-xs sm:text-base font-semibold rounded-lg px-3 py-2 transition-all duration-300 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white dark:text-white" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m4-9l2 9" />

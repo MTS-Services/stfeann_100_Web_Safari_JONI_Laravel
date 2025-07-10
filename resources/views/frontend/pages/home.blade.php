@@ -7,10 +7,10 @@
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div
             class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 !text-center transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10  md:text-left">
-            <h1 class="text-4xl md:text-8xl font-bold  mb-1/2  text-white">VALGRIT</h1>
-            <p class="text-xl md:text-4xl  font-semibold mb-3 text-white ">A NOSSA MISSAO</p>
+            <h1 class="text-4xl md:text-8xl font-bold  mb-1/2  text-white dark:text-white">VALGRIT</h1>
+            <p class="text-xl md:text-4xl  font-semibold mb-3 text-white dark:text-white">A NOSSA MISSAO</p>
             <a href="#saiba-mais"
-                class="inline-block  hover:bg-red-700 hover:text-white text-white bg-text-primary font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
+                class="inline-block  hover:bg-red-700 hover:text-white text-white dark:text-white bg-text-primary font-semibold text-2xl px-5 py-1 rounded shadow transition duration-300">
                 SAIBA MAIS
             </a>
         </div>
@@ -52,8 +52,8 @@
         <div class="section-container flex justify-center items-center min-h-[693px] bg-white py-16">
             <div class="w-full max-w-[1200px]">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Destaques</h2>
-                    <p class="text-gray-500 mb-8 text-lg">Descubra nossa coleção premium de roupas fitness</p>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Destaques</h2>
+                    <p class="text-gray-500 mb-8 text-lg dark:text-white">Descubra nossa coleção premium de roupas fitness</p>
                 </div>
 
                 <div class="px-4 sm:px-6 lg:px-0">
@@ -81,9 +81,9 @@
             <!-- Content Side -->
             <div
                 class="md:w-1/2 max-w-[1828px] w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
-                <h1 class="text-2xl md:text-4xl  text-black mb-6 text-left">Experimente a Diferença da Valgrit:
+                <h1 class="text-2xl md:text-4xl  text-black mb-6 text-left dark:text-white">Experimente a Diferença da Valgrit:
                     Qualidade Que Se Sente em Cada Fibra!</h1>
-                <p class="text-lg md:text-xl text-black mb-4 text-left">
+                <p class="text-lg md:text-xl text-black mb-4 text-left dark:text-white">
                     Na Valgrit, não vendemos apenas roupa desportiva – entregamos uma experiência de performance e
                     conforto incomparáveis.
                     Cada peça é cuidadosamente desenhada e fabricada com os melhores materiais, garantindo que se sinta

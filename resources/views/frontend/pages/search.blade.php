@@ -2,13 +2,13 @@
 
     <section class="my-24 bg-gray-100">
         <div class="max-w-6xl mx-auto text-left pt-20">
-            <h1 class="text-4xl font-bold text-gray-900">Search Result</h1>
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Search Result</h1>
         </div>
         <!-- Product Grid -->
         <div class="max-w-6xl mx-auto  mt-10 mb-16">
             @if ($searchProducts->isEmpty())
                 <div class="col-span-full text-center py-10">
-                    <h2 class="text-xl font-semibold text-gray-600">No products found for your search.</h2>
+                    <h2 class="text-xl font-semibold text-gray-600 dark:text-white">No products found for your search.</h2>
                 </div>
             @else
                 <div class="grid  gap-4 sm:gap-6">
