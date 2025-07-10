@@ -1,8 +1,5 @@
-<style>
-    /* Keyframe animations - these still need to be in custom CSS as Tailwind doesn't generate them directly */
-</style>
-<section class="bg-text-secondary">
-    <nav class="bg-white shadow-md fixed top-0 w-full z-50">
+<section class="bg-text-secondary dark:bg-bg-dark-secondary">
+    <nav class="bg-white dark:bg-bg-dark-primary shadow-md fixed top-0 w-full z-50">
         <div class="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
             <div class="flex items-center justify-between h-10">
                 <div class="md:hidden">
@@ -87,7 +84,8 @@
 
                         <dialog id="userModal" class="modal">
                             <div class="modal-box p-6 rounded-lg shadow-xl animate-fade-in-down">
-                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800 dark:text-white">Welcome!</h3>
+                                <h3 class="font-extrabold text-2xl mb-6 text-center text-gray-800 dark:text-white">
+                                    Welcome!</h3>
 
                                 @auth
                                     <div class="flex justify-center mb-4"> {{-- Added mb-4 for spacing below sign out button --}}
@@ -139,7 +137,15 @@
                             </div>
                         </dialog>
                     </div>
-
+                  <button @click="$store.theme.toggleTheme()"
+                    class="p-2 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+                    data-tooltip="Toggle theme"
+                    :title="$store.theme.current.charAt(0).toUpperCase() + $store.theme.current.slice(1) + ' mode'">
+                    <i data-lucide="sun" x-show="!$store.theme.darkMode"
+                        class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
+                    <i data-lucide="moon" x-show="$store.theme.darkMode"
+                        class="w-5 h-5 text-text-light-primary dark:text-text-white"></i>
+                </button>
 
                 </div>
 

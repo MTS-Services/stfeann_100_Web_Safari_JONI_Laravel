@@ -17,6 +17,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         toggleTheme() {
+            console.log('HI');
             this.current = this.current === 'light' ? 'dark' : 'light';
             this.updateTheme();
         },
