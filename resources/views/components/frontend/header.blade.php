@@ -1,4 +1,4 @@
-<section class="bg-text-secondary dark:bg-bg-dark-secondary">
+<section class="bg-text-secondary to-white dark:bg-bg-dark-secondary ">
     <nav class="bg-white dark:bg-bg-dark-primary shadow-md fixed top-0 w-full z-50">
         <div class="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
             <div class="flex items-center justify-between h-10">
@@ -21,7 +21,7 @@
 
                 <div class="flex-shrink-0 flex justify-center pl-12 flex-grow md:flex-grow-0 md:block">
                     <a href="{{ route('f.home') }}" class="flex items-center ">
-                        <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-10 md:h-20">
+                        <img src="{{ asset('frontend/images/header-logo.png') }}" alt="Valgrit Logo" class="h-10 md:h-20">
                     </a>
                 </div>
 
@@ -55,7 +55,7 @@
                             <!-- Search Input -->
                             <input type="text" name="search" value="{{ Request::get('search') }}"
                                 placeholder="Search Keyword"
-                                class="w-full text-sm text-black sm:text-base px-2 sm:px-3 py-1 sm:py-2 rounded-l-md bg-white dark:bg-bg-dark border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition" />
+                                class="w-full text-sm text-black dark:text-white sm:text-base px-2 sm:px-3 py-1 sm:py-2 rounded-l-md bg-white dark:bg-bg-dark-secondary border dark:border-border-dark-tertiary border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition" />
 
                             <!-- Search Button -->
                             <button type="submit"
@@ -73,7 +73,7 @@
                     <div>
                         <div class="text-gray-900">
                             <button onclick="userModal.showModal()" class="m-1 focus:outline-none">
-                                <svg class="h-6 w-6 sm:w-8 sm:h-8 text-gray-700 hover:text-blue-500 transition-colors duration-300"
+                                <svg class="h-6 w-6 sm:w-8 sm:h-8 text-gray-700 dark:text-text-dark-tertiary hover:text-blue-500 transition-colors duration-300"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
