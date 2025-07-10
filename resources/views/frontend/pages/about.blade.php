@@ -12,7 +12,7 @@
             </h1>
         </div>
     </section>
-    @foreach ($abouts as $about)
+    
         <section class="flex justify-center items-center min-h-[697px] bg-white dark:bg-gray-900 py-2 sm:py-2">
             <div
                 class="w-full max-w-[1500px] flex flex-col md:flex-row items-center justify-center rounded-lg overflow-hidden">
@@ -73,5 +73,4 @@
                 </div>
             </div>
         </section>
-    @endforeach
 </x-frontend::layout>

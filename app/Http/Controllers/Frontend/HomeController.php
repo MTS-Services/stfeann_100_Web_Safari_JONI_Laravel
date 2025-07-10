@@ -37,7 +37,7 @@ class HomeController extends Controller
 
 public function about()
 {
-    $data['abouts'] = About::active()->latest()->get();
+    $data['about'] = About::first();
     return view('frontend.pages.about', $data);
 }
  

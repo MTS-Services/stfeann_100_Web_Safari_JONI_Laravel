@@ -60,12 +60,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
     });
   });
   // About Us
-  Route::resource('about', AboutController::class);
-  Route::controller(AboutController::class)->name('about.')->prefix('about')->group(function () {
-    Route::post('/show/{about}', 'show')->name('show');
-    Route::get('/status/{about}', 'status')->name('status');
-    Route::get('/trash/bin', 'trash')->name('trash');
-    Route::get('/restore/{about}', 'restore')->name('restore');
-    Route::delete('/permanent-delete/{about}', 'permanentDelete')->name('permanent-delete');
-  });
+  Route::get('about', [AboutController::class, 'index'])->name('about.index');
+ Route::match(['POST', 'PUT'], 'admin/about/store-or-update/{id?}', [AboutController::class, 'storeOrUpdate'])->name('about.storeOrUpdate');
+
 });

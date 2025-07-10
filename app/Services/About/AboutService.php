@@ -4,80 +4,36 @@ namespace App\Services\About;
 
 use App\Http\Traits\FileManagementTrait;
 use App\Models\About;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
 class AboutService
 {
     use FileManagementTrait;
+public function createOrUpdateAbout(array $data, $file = null, string $identifier = 'title'): About
+{
+    return DB::transaction(function () use ($data, $file, $identifier) {
+        // Check if an About entry exists by unique identifier (e.g. title)
+        $existing = About::where($identifier, $data[$identifier])->first();
 
-    public function getAbouts($orderBy = 'sort_order', $order = 'asc')
-    {
-        return About::orderBy($orderBy, $order)->latest();
-    }
-    public function getAbout(string $encryptedId): About|Collection
-    {
-        return About::findOrFail(decrypt($encryptedId));
-    }
-    public function getDeletedAbout(string $encryptedId): About|Collection
-    {
-        return About::onlyTrashed()->findOrFail(decrypt($encryptedId));
-    }
+        if ($file) {
+            $data['image'] = $this->handleFileUpload($file, 'abouts', $data[$identifier] ?? 'about');
+        }
 
-    public function createAbout(array $data, $file = null): About
-    {
-        return DB::transaction(function () use ($data, $file) {
-            if ($file) {
-                $data['image'] = $this->handleFileUpload($file, 'abouts', $data['name'] ?? 'about');
-            }
-            $data['status'] = About::STATUS_ACTIVE;
-            $data['created_by'] = admin()->id;
-            $about = About::create($data);
-            return $about;
-        });
-    }
-
-    public function updateAbout(About $about, array $data, $file = null): About
-    {
-        return DB::transaction(function () use ($about, $data, $file) {
-            if ($file) {
-                $data['image'] = $this->handleFileUpload($file, 'abouts', $data['name'] ?? 'about');
-                $this->fileDelete($about->image);
+        if ($existing) {
+            // Update logic
+            if ($file && $existing->image) {
+                $this->fileDelete($existing->image);
             }
             $data['updated_by'] = admin()->id;
-            $about->update($data);
-            return $about;
-        });
-    }
-
-    public function delete(About $about): void
-    {
-        $about->update(['deleted_by' => admin()->id]);
-        $about->delete();
-    }
-
-    public function restore(string $encryptedId): void
-    {
-        $about = $this->getDeletedAbout($encryptedId);
-        $about->update(['updated_by' => admin()->id]);
-        $about->restore();
-    }
-
-    public function permanentDelete(string $encryptedId): void
-    {
-        $about = $this->getDeletedAbout($encryptedId);
-          if ($about->image) {
-            $this->fileDelete($about->image);
+            $existing->update($data);
+            return $existing;
         }
-        $about->forceDelete();
-    }
 
-    public function toggleStatus(About $about): void
-    {
-        $about->update([
-            'status' => !$about->status,
-            'updated_by' => admin()->id
-        ]);
-    }
+        // Create logic
+        $data['status'] = About::STATUS_ACTIVE;
+        $data['created_by'] = admin()->id;
+        return About::create($data);
+    });
+}
 }
 
